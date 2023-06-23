@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\administrador;
 use Illuminate\Http\Request;
 
 class administradoresController extends Controller
@@ -23,7 +24,9 @@ class administradoresController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('administradores.create');   //
+
     }
 
     /**
@@ -34,7 +37,10 @@ class administradoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $administradores = new administrador();
+        $administradores->ADMInombre = $request->ADMInombre;
+        $administradores->ADMIapellidos = $request->ADMIapellidos;
+        $administradores->save();
     }
 
     /**

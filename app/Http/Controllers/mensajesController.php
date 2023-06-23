@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\mensaje;
 use Illuminate\Http\Request;
 
 class mensajesController extends Controller
@@ -23,7 +24,7 @@ class mensajesController extends Controller
      */
     public function create()
     {
-        //
+        return view('mensajes.create');
     }
 
     /**
@@ -34,7 +35,9 @@ class mensajesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mensajes = new mensaje();
+        $mensajes->MENnombre_chat = $request->MENnombre_chat;
+        $mensajes->save();
     }
 
     /**

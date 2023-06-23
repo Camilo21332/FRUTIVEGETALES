@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePuntoDeAbastecimientoTable extends Migration
+class CreateAdministradorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreatePuntoDeAbastecimientoTable extends Migration
      */
     public function up()
     {
-        Schema::create('puntos_de_abastecimientos', function (Blueprint $table) {
+        Schema::create('administradors', function (Blueprint $table) {
             $table->id();
-            $table->string('PUNTnombre');
+            $table->string('ADMInombre');
+            $table->string('ADMIapellidos');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreatePuntoDeAbastecimientoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('puntos_de_abastecimientos');
+        Schema::dropIfExists('administradors');
     }
 }

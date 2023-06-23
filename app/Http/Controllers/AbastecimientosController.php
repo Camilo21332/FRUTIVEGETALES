@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\abastecimiento;
+use App\Models\punto_de_abastecimiento;
 use Illuminate\Http\Request;
 
-class puntos_de_abastecimientosController extends Controller
+class AbastecimientosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +25,7 @@ class puntos_de_abastecimientosController extends Controller
      */
     public function create()
     {
-        //
+        return view('abastecimientos.create');
     }
 
     /**
@@ -34,7 +36,9 @@ class puntos_de_abastecimientosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Abastecimientos = new abastecimiento();
+        $Abastecimientos->PUNTnombre = $request->PUNTnombre;
+        $Abastecimientos->save();
     }
 
     /**
