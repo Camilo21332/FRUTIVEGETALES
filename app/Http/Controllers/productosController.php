@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\producto;
+
 
 class productosController extends Controller
 {
@@ -23,7 +25,7 @@ class productosController extends Controller
      */
     public function create()
     {
-        //
+  return view('productos.create');   //
     }
 
     /**
@@ -34,7 +36,11 @@ class productosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productos= new producto();
+        $productos->PRODUCTnombres=$request->PRODUCTnombres;
+        $productos->PRODUCTtiempo_reclamo=$request->PRODUCTtiempo_reclamo;
+        $productos->save();
+        
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\venta;
 
 class ventasController extends Controller
 {
@@ -23,7 +24,7 @@ class ventasController extends Controller
      */
     public function create()
     {
-        //
+        return view('ventas.create'); 
     }
 
     /**
@@ -34,7 +35,9 @@ class ventasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ventas= new venta();
+        $ventas->VENTcarrito_compra=$request->VENTcarrito_compra;
+         $ventas->save();
     }
 
     /**

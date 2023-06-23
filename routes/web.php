@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\productosController;
+use App\Http\Controllers\ventasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('productos/create',[productosController::class, 'create']);
+Route::get('ventas/create',[ventasController::class, 'create']);
+Route::post('productos',[productosController::class, 'store'])->name('productos.store');
+Route::post('ventas',[ventasController::class, 'store'])->name('ventas.store');
 Route::get('index', function () {
     return view('index');
 });
 Route::get('cart', function () {
     return view('cart');
 });
+
+
+
