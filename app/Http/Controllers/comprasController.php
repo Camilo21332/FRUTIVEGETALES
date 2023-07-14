@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\compra;
 use Illuminate\Http\Request;
 
 class comprasController extends Controller
@@ -23,7 +24,7 @@ class comprasController extends Controller
      */
     public function create()
     {
-        //
+        return view('compras.create');   
     }
 
     /**
@@ -34,7 +35,11 @@ class comprasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $compras = new compra();
+        $compras->COMPqr = $request->COMPqr;
+        $compras->COMPcantida = $request->COMPcantida;
+        $compras->COMPcarrito_compra = $request->COMPcarrito_compra;
+        $compras->save();
     }
 
     /**

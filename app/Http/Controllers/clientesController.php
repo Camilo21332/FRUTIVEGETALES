@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cliente;
 use Illuminate\Http\Request;
 
 class clientesController extends Controller
@@ -23,7 +24,7 @@ class clientesController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes.create');  
     }
 
     /**
@@ -34,7 +35,13 @@ class clientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $clientes = new cliente();
+        $clientes->CLIEnombres = $request->CLIEnombres;
+        $clientes->CLIEapellidos = $request->CLIEapellidos;
+        $clientes->CLIEedad = $request-> CLIEedad;
+        $clientes->CLIEemail= $request-> CLIEemail;
+        $clientes->CLIEcontraseña= $request-> CLIEcontraseña;
+        $clientes->save(); //
     }
 
     /**

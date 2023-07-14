@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pago;
 use Illuminate\Http\Request;
 
 class pagosController extends Controller
@@ -23,7 +24,7 @@ class pagosController extends Controller
      */
     public function create()
     {
-        //
+        return view('pagos.create');   //
     }
 
     /**
@@ -34,7 +35,9 @@ class pagosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pagos = new pago();
+        $pagos->PAGOfactura = $request->PAGOfactura;
+        $pagos->save();
     }
 
     /**
