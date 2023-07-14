@@ -24,7 +24,11 @@ class pagosController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         return view('pagos.create');   //
+=======
+        return view('pagos.create');
+>>>>>>> 4ad822bd6eaad1d257b01676143c73faf668a99c
     }
 
     /**
@@ -35,9 +39,16 @@ class pagosController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $pagos = new pago();
         $pagos->PAGOfactura = $request->PAGOfactura;
         $pagos->save();
+=======
+        $pagos=new pago();
+        $pagos->PAGOfactura=$request->PAGOfactura;
+        $pagos->save();
+
+>>>>>>> 4ad822bd6eaad1d257b01676143c73faf668a99c
     }
 
     /**

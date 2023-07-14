@@ -9,8 +9,11 @@ use App\Http\Controllers\productosController;
 use App\Http\Controllers\ventasController;
 use App\Http\Controllers\mensajesController;
 use App\Http\Controllers\pagosController;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4ad822bd6eaad1d257b01676143c73faf668a99c
 use App\Models\administradores;
 
 /*
@@ -33,8 +36,13 @@ Route::get('ventas/create', [ventasController::class, 'create']);
 Route::get('mensajes/create', [mensajesController::class, 'create']);
 Route::get('abastecimientos/create', [AbastecimientosController::class, 'create']);
 Route::get('pagos/create', [pagosController::class, 'create']);
+<<<<<<< HEAD
 Route::get('compras/create', [comprasController::class, 'create']);
 Route::get('clientes/create', [clientesController::class, 'create']);
+=======
+
+
+>>>>>>> 4ad822bd6eaad1d257b01676143c73faf668a99c
 
 Route::post('productos', [productosController::class, 'store'])->name('productos.store');
 Route::post('ventas', [ventasController::class, 'store'])->name('ventas.store');
@@ -42,8 +50,14 @@ Route::post('administradores', [administradoresController::class, 'store'])->nam
 Route::post('mensajes', [mensajesController::class, 'store'])->name('mensajes.store');
 Route::post('abastecimientos', [AbastecimientosController::class, 'store'])->name('abastecimientos.store');
 Route::post('pagos', [pagosController::class, 'store'])->name('pagos.store');
+<<<<<<< HEAD
 Route::post('compras', [comprasController::class, 'store'])->name('compras.store');
 Route::post('clientes', [clientesController::class, 'store'])->name('clientes.store');
+=======
+
+
+
+>>>>>>> 4ad822bd6eaad1d257b01676143c73faf668a99c
 Route::get('index', function () {
     return view('index');
 });
