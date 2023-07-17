@@ -9,11 +9,7 @@ use App\Http\Controllers\productosController;
 use App\Http\Controllers\ventasController;
 use App\Http\Controllers\mensajesController;
 use App\Http\Controllers\pagosController;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 4ad822bd6eaad1d257b01676143c73faf668a99c
+use App\Http\Controllers\usersController;
 use App\Models\administradores;
 
 /*
@@ -30,34 +26,42 @@ use App\Models\administradores;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('productos/create', [productosController::class, 'create']);
-Route::get('administradores/create', [administradoresController::class, 'create']);
-Route::get('ventas/create', [ventasController::class, 'create']);
-Route::get('mensajes/create', [mensajesController::class, 'create']);
-Route::get('abastecimientos/create', [AbastecimientosController::class, 'create']);
-Route::get('pagos/create', [pagosController::class, 'create']);
-<<<<<<< HEAD
-Route::get('compras/create', [comprasController::class, 'create']);
-Route::get('clientes/create', [clientesController::class, 'create']);
-=======
-
-
->>>>>>> 4ad822bd6eaad1d257b01676143c73faf668a99c
-
-Route::post('productos', [productosController::class, 'store'])->name('productos.store');
-Route::post('ventas', [ventasController::class, 'store'])->name('ventas.store');
-Route::post('administradores', [administradoresController::class, 'store'])->name('administradores.store');
-Route::post('mensajes', [mensajesController::class, 'store'])->name('mensajes.store');
-Route::post('abastecimientos', [AbastecimientosController::class, 'store'])->name('abastecimientos.store');
-Route::post('pagos', [pagosController::class, 'store'])->name('pagos.store');
-<<<<<<< HEAD
-Route::post('compras', [comprasController::class, 'store'])->name('compras.store');
+//clientes
+Route::get('clientes/create', [clientesController::class, 'create'])->name('clientes.create'); 
 Route::post('clientes', [clientesController::class, 'store'])->name('clientes.store');
-=======
+Route::get('clientes', [clientesController::class, 'index'])->name('clientes.index');
 
+ //productos
+Route::get('productos/create', [productosController::class, 'create']);
+Route::post('productos', [productosController::class, 'store'])->name('productos.store');
+//administrador
+Route::get('administradores/create', [administradoresController::class, 'create']);
+Route::post('administradores', [administradoresController::class, 'store'])->name('administradores.store');
 
+//ventas
+Route::get('ventas/create', [ventasController::class, 'create']);
+Route::post('ventas', [ventasController::class, 'store'])->name('ventas.store');
 
->>>>>>> 4ad822bd6eaad1d257b01676143c73faf668a99c
+//mensajes
+Route::get('mensajes/create', [mensajesController::class, 'create']);
+Route::post('mensajes', [mensajesController::class, 'store'])->name('mensajes.store');
+
+//abastecimientos
+Route::get('abastecimientos/create', [AbastecimientosController::class, 'create']);
+Route::post('abastecimientos', [AbastecimientosController::class, 'store'])->name('abastecimientos.store');
+
+//pagos
+Route::get('pagos/create', [pagosController::class, 'create']);
+Route::post('pagos', [pagosController::class, 'store'])->name('pagos.store');
+
+//compras
+Route::get('compras/create', [comprasController::class, 'create']);
+Route::post('compras', [comprasController::class, 'store'])->name('compras.store');
+
+ //users
+Route::get('users/create', [usersController::class, 'create']);
+Route::post('users', [usersController::class, 'store'])->name('users.store');
+
 Route::get('index', function () {
     return view('index');
 });

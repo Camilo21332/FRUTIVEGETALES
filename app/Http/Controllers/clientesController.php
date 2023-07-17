@@ -14,7 +14,8 @@ class clientesController extends Controller
      */
     public function index()
     {
-        //
+     $cliente=cliente::all();
+     return view('clientes.index' , compact('cliente'));
     }
 
     /**
@@ -24,6 +25,7 @@ class clientesController extends Controller
      */
     public function create()
     {
+
         return view('clientes.create');  
     }
 
@@ -42,6 +44,7 @@ class clientesController extends Controller
         $clientes->CLIEemail= $request-> CLIEemail;
         $clientes->CLIEcontraseña= $request-> CLIEcontraseña;
         $clientes->save(); //
+        return Redirect()->route('clientes.index',$clientes);
     }
 
     /**
@@ -52,7 +55,7 @@ class clientesController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

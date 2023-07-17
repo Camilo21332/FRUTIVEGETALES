@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\user;
 use Illuminate\Http\Request;
 
-class usuariosController extends Controller
+class usersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +24,7 @@ class usuariosController extends Controller
      */
     public function create()
     {
-        
+        return view('users.create');//
     }
 
     /**
@@ -34,7 +35,14 @@ class usuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario= new user();
+        $usuario->USUnombres=$request->USUnombres;
+        $usuario->USUapellidos=$request->USUapellidos;
+        $usuario->USUedad=$request->USUedad;
+        $usuario->USUtelefono=$request->USUtelefono;
+        $usuario->USUemail=$request->USUemail;
+        $usuario->USUcontraseña=$request->USUcontraseña;
+        $usuario->save();
     }
 
     /**
