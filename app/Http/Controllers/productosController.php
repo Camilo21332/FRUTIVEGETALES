@@ -15,8 +15,11 @@ class productosController extends Controller
      */
     public function index()
     {
-        
+        $productos= producto::all();
+     return view('productos.index',compact('productos'));
+    
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -42,6 +45,9 @@ class productosController extends Controller
         $productos->PRODUCTnombres=$request->PRODUCTnombres;
         $productos->PRODUCTtiempo_reclamo=$request->PRODUCTtiempo_reclamo;
         $productos->save();
+
+        return Redirect()->route('productos.index',$productos);
+
         
     }
 

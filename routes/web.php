@@ -10,6 +10,7 @@ use App\Http\Controllers\ventasController;
 use App\Http\Controllers\mensajesController;
 use App\Http\Controllers\pagosController;
 use App\Http\Controllers\usersController;
+
 use App\Models\administradores;
 
 /*
@@ -32,8 +33,9 @@ Route::post('clientes', [clientesController::class, 'store'])->name('clientes.st
 Route::get('clientes', [clientesController::class, 'index'])->name('clientes.index');
 
  //productos
-Route::get('productos/create', [productosController::class, 'create']);
+Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
 Route::post('productos', [productosController::class, 'store'])->name('productos.store');
+Route::get('productos', [productosController::class, 'index'])->name('productos.index');
 //administrador
 Route::get('administradores/create', [administradoresController::class, 'create']);
 Route::post('administradores', [administradoresController::class, 'store'])->name('administradores.store');
