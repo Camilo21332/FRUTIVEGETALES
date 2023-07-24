@@ -14,7 +14,8 @@ class ventasController extends Controller
      */
     public function index()
     {
-        //
+        $venta=venta::all();
+        return view('ventas.index' , compact('venta'));
     }
 
     /**
@@ -38,6 +39,7 @@ class ventasController extends Controller
         $ventas= new venta();
         $ventas->VENTcarrito_compra=$request->VENTcarrito_compra;
          $ventas->save();
+         return Redirect()->route('ventas.index',$ventas);
     }
 
     /**

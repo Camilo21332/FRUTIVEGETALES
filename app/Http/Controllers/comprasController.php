@@ -14,7 +14,8 @@ class comprasController extends Controller
      */
     public function index()
     {
-        //
+        $compra=compra::all();
+        return view('compras.index' , compact('compra'));
     }
 
     /**
@@ -40,6 +41,7 @@ class comprasController extends Controller
         $compras->COMPcantida = $request->COMPcantida;
         $compras->COMPcarrito_compra = $request->COMPcarrito_compra;
         $compras->save();
+        return Redirect()->route('compras.index',$compras);
     }
 
     /**

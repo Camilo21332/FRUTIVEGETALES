@@ -14,7 +14,8 @@ class usersController extends Controller
      */
     public function index()
     {
-        //
+        $user=user::all();
+        return view('users.index' , compact('user'));
     }
 
     /**
@@ -35,14 +36,15 @@ class usersController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario= new user();
-        $usuario->USUnombres=$request->USUnombres;
-        $usuario->USUapellidos=$request->USUapellidos;
-        $usuario->USUedad=$request->USUedad;
-        $usuario->USUtelefono=$request->USUtelefono;
-        $usuario->USUemail=$request->USUemail;
-        $usuario->USUcontraseña=$request->USUcontraseña;
-        $usuario->save();
+        $users= new user();
+        $users->USUnombres=$request->USUnombres;
+        $users->USUapellidos=$request->USUapellidos;
+        $users->USUedad=$request->USUedad;
+        $users->USUtelefono=$request->USUtelefono;
+        $users->USUemail=$request->USUemail;
+        $users->USUcontraseña=$request->USUcontraseña;
+        $users->save();
+        return Redirect()->route('users.index',$users);
     }
 
     /**

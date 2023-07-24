@@ -14,7 +14,8 @@ class administradoresController extends Controller
      */
     public function index()
     {
-        //
+        $administrador=administrador::all();
+        return view('administradores.index' , compact('administrador'));
     }
 
     /**
@@ -41,6 +42,7 @@ class administradoresController extends Controller
         $administradores->ADMInombre = $request->ADMInombre;
         $administradores->ADMIapellidos = $request->ADMIapellidos;
         $administradores->save();
+        return Redirect()->route('administradores.index',$administradores);
     }
 
     /**

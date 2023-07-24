@@ -19,13 +19,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="../../vendor/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../../vendor/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link  rel="stylesheet" href="{{asset('css/index.css')}}" >
 </head>
-
+ 
 <body>
     <!-- Topbar Start -->
     <!-- menu superior-->
@@ -37,20 +37,7 @@
                     
                 </div>
             </div>
-           <!---parte carrito y corazon-->
-                  
-                </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                </div>
-            </div>
+       
             <!-- parte del nombre aplicacion-->
         </div>
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
@@ -124,7 +111,7 @@
                                 </div>
                             </div>
 
-                            <a href="contact.html" class="nav-item nav-link">Contactenos</a>
+                            <a href="../views/contact.blade.php" class="nav-item nav-link">Contactenos</a>
                         </div>
                         <!-- carrito y corazon -->
                  
@@ -217,9 +204,7 @@
                         <img class="img-fluid w-100" src="img/tomates.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                            
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -227,14 +212,7 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$4.000</h5><h6 class="text-muted ml-2"><del>$4.000</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -244,9 +222,7 @@
                         <img class="img-fluid w-100" src="img/lechuga.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                            
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -254,14 +230,7 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$5000</h5><h6 class="text-muted ml-2"><del>$5000</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
@@ -271,9 +240,7 @@
                         <img class="img-fluid w-100" src="img/aguacate.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                            
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -281,14 +248,7 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$10000</h5><h6 class="text-muted ml-2"><del>$10000</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -298,9 +258,7 @@
                         <img class="img-fluid w-100" src="img/ajos.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                            
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -308,14 +266,7 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$1000</h5><h6 class="text-muted ml-2"><del>$1000</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -325,9 +276,7 @@
                         <img class="img-fluid w-100" src="img/cebolla larga.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                           
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -335,14 +284,7 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$3000</h5><h6 class="text-muted ml-2"><del>$3000</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -352,9 +294,7 @@
                         <img class="img-fluid w-100" src="img/mango.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                      
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -362,14 +302,7 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$5000</h5><h6 class="text-muted ml-2"><del>$5000</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -379,9 +312,7 @@
                         <img class="img-fluid w-100" src="img/papas.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                            
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -389,14 +320,7 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$1000</h5><h6 class="text-muted ml-2"><del>$1000</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -406,9 +330,7 @@
                         <img class="img-fluid w-100" src="img/naranja-1.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                           
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -416,14 +338,7 @@
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>$8000</h5><h6 class="text-muted ml-2"><del>$8000</del></h6>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -462,15 +377,15 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="../../vendor/lib/easing/easing.min.js"></script>
-    <script src="../../vendor/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Javascript File -->
-    <script src="../../vendor/mail/jqBootstrapValidation.min.js"></script>
-    <script src="../../vendor/mail/contact.js"></script>
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../../vendor/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

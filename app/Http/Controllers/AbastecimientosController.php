@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\abastecimiento;
-use App\Models\punto_de_abastecimiento;
+
 use Illuminate\Http\Request;
 
 class AbastecimientosController extends Controller
@@ -15,7 +15,8 @@ class AbastecimientosController extends Controller
      */
     public function index()
     {
-        //
+        $Abastecimientos=abastecimiento::all();
+        return view('abastecimientos.index' , compact('abastecimientos'));
     }
 
     /**
@@ -39,6 +40,7 @@ class AbastecimientosController extends Controller
         $Abastecimientos = new abastecimiento();
         $Abastecimientos->PUNTnombre = $request->PUNTnombre;
         $Abastecimientos->save();
+        return Redirect()->route('abastecimientos.index',$Abastecimientos);
     }
 
     /**

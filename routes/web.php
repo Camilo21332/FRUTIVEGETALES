@@ -36,37 +36,63 @@ Route::get('clientes', [clientesController::class, 'index'])->name('clientes.ind
 Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
 Route::post('productos', [productosController::class, 'store'])->name('productos.store');
 Route::get('productos', [productosController::class, 'index'])->name('productos.index');
+
 //administrador
-Route::get('administradores/create', [administradoresController::class, 'create']);
+
+Route::get('administradores/create', [administradoresController::class, 'create'])->name('administradores.create');
 Route::post('administradores', [administradoresController::class, 'store'])->name('administradores.store');
+Route::get('administradores', [administradoresController::class, 'index'])->name('administradores.index');
 
 //ventas
-Route::get('ventas/create', [ventasController::class, 'create']);
+Route::get('ventas/create', [ventasController::class, 'create'])->name('ventas.create');
 Route::post('ventas', [ventasController::class, 'store'])->name('ventas.store');
+Route::get('ventas', [ventasController::class, 'index'])->name('ventas.index');
 
 //mensajes
-Route::get('mensajes/create', [mensajesController::class, 'create']);
+Route::get('mensajes/create', [mensajesController::class, 'create'])->name('mensajes.create');
 Route::post('mensajes', [mensajesController::class, 'store'])->name('mensajes.store');
+Route::get('mensajes', [mensajesController::class, 'index'])->name('mensajes.index');
 
 //abastecimientos
-Route::get('abastecimientos/create', [AbastecimientosController::class, 'create']);
+Route::get('abastecimientos/create', [AbastecimientosController::class, 'create'])->name('abastecimientos.create');
 Route::post('abastecimientos', [AbastecimientosController::class, 'store'])->name('abastecimientos.store');
+Route::get('abastecimientos', [AbastecimientosController::class, 'index'])->name('abastecimientos.index');
 
 //pagos
-Route::get('pagos/create', [pagosController::class, 'create']);
+Route::get('pagos/create', [pagosController::class, 'create'])->name('pagos.create');
 Route::post('pagos', [pagosController::class, 'store'])->name('pagos.store');
+Route::get('pagos', [pagosController::class, 'index'])->name('pagos.index');
 
 //compras
-Route::get('compras/create', [comprasController::class, 'create']);
+Route::get('compras/create', [comprasController::class, 'create'])->name('compras.create');
 Route::post('compras', [comprasController::class, 'store'])->name('compras.store');
+Route::get('compras', [comprasController::class, 'index'])->name('compras.index');
 
  //users
-Route::get('users/create', [usersController::class, 'create']);
+Route::get('users/create', [usersController::class, 'create'])->name('users.create');
 Route::post('users', [usersController::class, 'store'])->name('users.store');
+Route::get('users', [usersController::class, 'index'])->name('users.index');
 
+
+//rutas para la interfas de la aplicacion
 Route::get('index', function () {
     return view('index');
 });
+Route::get('registro', function () {
+    return view('registro');
+});
+Route::get('contact', function () {
+    return view('contact');
+});
+
+Route::get('organico', function () {
+    return view('organico');
+});
+Route::get('inorganico', function () {
+    return view('inorganico');
+});
+
+
 Route::get('cart', function () {
     return view('cart');
 });

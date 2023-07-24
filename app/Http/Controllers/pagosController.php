@@ -14,7 +14,8 @@ class pagosController extends Controller
      */
     public function index()
     {
-        //
+        $pago=pago::all();
+        return view('pagos.index' , compact('pago'));
     }
 
     /**
@@ -27,7 +28,6 @@ class pagosController extends Controller
 
         return view('pagos.create');   //
 
-        return view('pagos.create');
 
     }
 
@@ -43,11 +43,8 @@ class pagosController extends Controller
         $pagos = new pago();
         $pagos->PAGOfactura = $request->PAGOfactura;
         $pagos->save();
-
-        $pagos=new pago();
-        $pagos->PAGOfactura=$request->PAGOfactura;
-        $pagos->save();
-
+        return Redirect()->route('pagos.index',$pagos);
+   
     }
 
     /**

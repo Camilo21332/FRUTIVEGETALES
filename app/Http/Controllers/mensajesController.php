@@ -14,7 +14,8 @@ class mensajesController extends Controller
      */
     public function index()
     {
-        //
+        $mensaje=mensaje::all();
+        return view('mensajes.index' , compact('mensaje'));
     }
 
     /**
@@ -38,6 +39,7 @@ class mensajesController extends Controller
         $mensajes = new mensaje();
         $mensajes->MENnombre_chat = $request->MENnombre_chat;
         $mensajes->save();
+        return Redirect()->route('mensajes.index',$mensajes);
     }
 
     /**
