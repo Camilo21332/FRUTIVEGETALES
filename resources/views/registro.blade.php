@@ -57,6 +57,6 @@
 
 
 </main>
-<script src="{{ asset('js/registro.js') }}"></script>
+<script src="{{ asset('registro.js') }}"></script>
 </body>
 </html>
