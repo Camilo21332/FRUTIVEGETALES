@@ -81,17 +81,17 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link">inicio</a>
+                            <a href="{{route('index')}}" class="nav-item nav-link">inicio</a>
                             <a href="shop.html" class="nav-item nav-link">pqrs</a>
                       
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">compras <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">carrito de compras</a>
+                                    <a href="{{route('cart')}}" class="dropdown-item">carrito de compras</a>
                              
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link active">Contactenos</a>
+                            <a href="{{route('contact')}}" class="nav-item nav-link active">Contactenos</a>
                         </div>
                     
                     </div>

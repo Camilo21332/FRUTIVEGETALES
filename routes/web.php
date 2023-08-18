@@ -32,6 +32,10 @@ Route::get('clientes/create', [clientesController::class, 'create'])->name('clie
 Route::post('clientes', [clientesController::class, 'store'])->name('clientes.store');
 Route::get('clientes', [clientesController::class, 'index'])->name('clientes.index');
 
+// eliminar 
+
+
+
  //productos
 Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
 Route::post('productos', [productosController::class, 'store'])->name('productos.store');
@@ -77,24 +81,32 @@ Route::get('users', [usersController::class, 'index'])->name('users.index');
 //rutas para la interfas de la aplicacion
 Route::get('index', function () {
     return view('index');
-});
+})->name('index');
+
 Route::get('registro', function () {
     return view('registro');
 });
 Route::get('contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 Route::get('organico', function () {
     return view('organico');
-});
+})->name('organico');
+
 Route::get('inorganico', function () {
     return view('inorganico');
-});
+})->name('inorganico');
 
 
 Route::get('cart', function () {
     return view('cart');
-});
+})->name('cart');
+
+Route::get('pqrs', function () {
+    return view('pqrs');
+})->name('pqrs');
+
+
 
 Route::get('cursos/create', [productosController::class, 'create']);

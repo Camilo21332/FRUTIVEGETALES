@@ -34,7 +34,9 @@
                         <input type="text" name="CLIEcontraseña">
                     </label>
     <br><br>
-    <button type="submit">Enviar Formulario:</button> </form> 
+
     
+              
+   
 </body>
 </html>
