@@ -17,6 +17,13 @@ class CreateAdministradorsTable extends Migration
             $table->id();
             $table->string('ADMInombre');
             $table->string('ADMIapellidos');
+
+          /*  $table->unsignedBigInteger('venta_id')->unique();
+            $table->foreign('venta_id')
+            ->references('id')
+            ->on('ventas')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');*/
             $table->timestamps();
         });
     }

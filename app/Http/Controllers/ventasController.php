@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\administrador;
 use Illuminate\Http\Request;
 use App\Models\venta;
 
@@ -39,6 +40,8 @@ class ventasController extends Controller
         $ventas= new venta();
         $ventas->VENTcarrito_compra=$request->VENTcarrito_compra;
          $ventas->save();
+      
+
          return Redirect()->route('ventas.index',$ventas);
     }
 

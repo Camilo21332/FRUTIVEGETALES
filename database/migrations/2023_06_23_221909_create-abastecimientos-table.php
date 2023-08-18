@@ -15,8 +15,13 @@ class CreateAbastecimientosTable extends Migration
     {
         Schema::create('abastecimientos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('administrador_id'); // Clave foránea
             $table->string('PUNTnombre');
+
             $table->timestamps();
+
+            $table->foreign('administrador_id')->references('id')->on('administradors');
+            
         });
     }
 

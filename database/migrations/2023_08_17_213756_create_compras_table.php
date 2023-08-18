@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompraTable extends Migration
+class CreateComprasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,13 @@ class CreateCompraTable extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('cliente_id'); // Clave foránea
             $table->string('COMPqr');
             $table->string('COMPcantida');
             $table->string('COMPcarrito_compra');
+
             $table->timestamps();
+            $table->foreign('cliente_id')->references('id')->on('clientes');
         });
     }
 
