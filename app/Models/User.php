@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class user extends Model
 {
+    protected $fillable = [
+        'USUnombres' ,
+        'USUapellidos',
+        'USUedad',
+        'USUtelefono',
+        'USUemail',
+        'USUcontraseña'
+        
+    ];
+    
     use HasFactory;
     
     // Relacion Uno a Muchos 

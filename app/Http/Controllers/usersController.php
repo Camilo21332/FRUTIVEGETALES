@@ -64,9 +64,9 @@ class usersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(user $user)
     {
-        //
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -76,9 +76,13 @@ class usersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, user $user)
     {
-        //
+      $data = $request->only( 'USUnombres' , 'USUapellidos' , 'USUedad' , 'USUtelefono' , 'USUemail' , 'USUcontraseña');
+
+      $user->update($data);
+      return redirect()->route('users.index');
+
     }
 
     /**
@@ -87,8 +91,8 @@ class usersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(user $user)
     {
-        //
+        $user->delete();
     }
 }

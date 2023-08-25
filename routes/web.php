@@ -32,7 +32,8 @@ Route::get('clientes/create', [clientesController::class, 'create'])->name('clie
 Route::post('clientes', [clientesController::class, 'store'])->name('clientes.store');
 Route::get('clientes', [clientesController::class, 'index'])->name('clientes.index');
 
-// eliminar 
+// editar
+
 
 
 
@@ -76,6 +77,12 @@ Route::get('compras', [comprasController::class, 'index'])->name('compras.index'
 Route::get('users/create', [usersController::class, 'create'])->name('users.create');
 Route::post('users', [usersController::class, 'store'])->name('users.store');
 Route::get('users', [usersController::class, 'index'])->name('users.index');
+
+//editar
+Route::get('users/{user}/edit', [usersController::class, 'edit'])->name('users.edit');
+Route::put('users/{user}', [usersController::class, 'update'])->name('users.update');
+
+
 
 
 //rutas para la interfas de la aplicacion

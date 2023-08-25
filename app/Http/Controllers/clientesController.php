@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class clientesController extends Controller
 {
@@ -37,12 +38,15 @@ class clientesController extends Controller
      */
     public function store(Request $request)
     {
+        $user_id = Auth::id();
+
         $clientes = new cliente();
         $clientes->CLIEnombres = $request->CLIEnombres;
         $clientes->CLIEapellidos = $request->CLIEapellidos;
         $clientes->CLIEedad = $request-> CLIEedad;
         $clientes->CLIEemail= $request-> CLIEemail;
         $clientes->CLIEcontraseña= $request-> CLIEcontraseña;
+        $clientes->user_id = $user_id;
         $clientes->save(); //
         return Redirect()->route('clientes.index',$clientes);
     }

@@ -2,7 +2,10 @@
 
 @section('content')
 
+
 <table>
+    <div class="usuario-table">
+        <table>
     <thead>
         <tr>
             <th> nombres <span class=""></span></th>
@@ -14,6 +17,7 @@
      
         </tr>
     </thead>
+</div>
     @foreach ($user as $user)
     <tbody>
         <tr>
@@ -26,9 +30,10 @@
             <td>{{$user->USUcontraseña}}</td>
          
             <td>
-             <a href="{{route('users.create')}}"><p class="status delivered">Agregar </p></a>
+             <a href="{{route('users.create') }}"><p class="usuario-table--agregar">Agregar </p></a>
+             <a href="{{route('users.edit' ,$user->id) }}"><p class="usuario-table--agregar">editar </p></a>
             </td>
-
+        
     </tbody>
     @endforeach</td>
 </table>
