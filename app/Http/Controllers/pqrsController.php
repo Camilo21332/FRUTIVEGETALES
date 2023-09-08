@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cliente;
+use App\Models\pqr;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class clientesController extends Controller
+class pqrsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class clientesController extends Controller
      */
     public function index()
     {
-     $cliente=cliente::all();
-     return view('clientes.index' , compact('cliente'));
+        $pqr=pqr::all();
+        return view('pqrs.index' , compact('pqr'));
     }
 
     /**
@@ -26,8 +26,8 @@ class clientesController extends Controller
      */
     public function create()
     {
-
-        return view('clientes.create');  
+        $users = User::all();
+        return view('pqrs.create' ,compact('users')); 
     }
 
     /**
@@ -38,17 +38,11 @@ class clientesController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = Auth::id();
-
-        $clientes = new cliente();
-        $clientes->CLIEnombres = $request->CLIEnombres;
-        $clientes->CLIEapellidos = $request->CLIEapellidos;
-        $clientes->CLIEedad = $request-> CLIEedad;
-        $clientes->CLIEemail= $request-> CLIEemail;
-        $clientes->CLIEcontraseña= $request-> CLIEcontraseña;
-        $clientes->user_id = $user_id;
-        $clientes->save(); //
-        return Redirect()->route('clientes.index',$clientes);
+        $pqrs = new pqr();
+        $pqrs->motivo = $request->motivo;
+        $pqrs->user_id=$request->user_id;
+        $pqrs->save();
+        return Redirect()->route('pqrs.index',$pqrs);
     }
 
     /**
@@ -59,7 +53,7 @@ class clientesController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -82,10 +76,7 @@ class clientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-
-
-
+        //
     }
 
     /**

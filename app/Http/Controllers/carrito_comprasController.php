@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\administrador;
+use App\Models\carrito_compra;
+use App\Models\producto;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
-class administradoresController extends Controller
+class carrito_comprasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,10 @@ class administradoresController extends Controller
      */
     public function index()
     {
-        $administrador=administrador::all();
-        return view('administradores.index' , compact('administrador'));
+        
+         $carrito_compra=carrito_compra::all();
+        return view('cars.index' , compact('carrito_compra'));
+
     }
 
     /**
@@ -25,9 +29,9 @@ class administradoresController extends Controller
      */
     public function create()
     {
-
-        return view('administradores.create');   //
-
+        $users = User::all();
+        $productos = producto::all();
+        return view('cars.create', compact('users', 'productos'));   
     }
 
     /**
@@ -38,11 +42,12 @@ class administradoresController extends Controller
      */
     public function store(Request $request)
     {
-        $administradores = new administrador();
-        $administradores->ADMInombre = $request->ADMInombre;
-        $administradores->ADMIapellidos = $request->ADMIapellidos;
-        $administradores->save();
-        return Redirect()->route('administradores.index',$administradores);
+        $cars = new carrito_compra();
+        $cars->cantida_productos = $request->cantida_productos;
+        $cars->user_id=$request->user_id;
+        $cars->producto_id=$request->producto_id;
+        $cars->save();
+        return Redirect()->route('cars.index',$cars);
     }
 
     /**

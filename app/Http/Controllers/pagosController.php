@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\pago;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class pagosController extends Controller
@@ -25,8 +26,8 @@ class pagosController extends Controller
      */
     public function create()
     {
-
-        return view('pagos.create');   //
+        $users = User::all();
+        return view('pagos.create' ,compact('users'));   //
 
 
     }
@@ -41,7 +42,8 @@ class pagosController extends Controller
     {
 
         $pagos = new pago();
-        $pagos->PAGOfactura = $request->PAGOfactura;
+        $pagos->facturas = $request->facturas;
+        $pagos->user_id=$request->user_id;
         $pagos->save();
         return Redirect()->route('pagos.index',$pagos);
    

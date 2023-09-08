@@ -15,7 +15,7 @@ class AbastecimientosController extends Controller
      */
     public function index()
     {
-        $Abastecimientos=abastecimiento::all();
+        $abastecimientos = abastecimiento::all();
         return view('abastecimientos.index' , compact('abastecimientos'));
     }
 
@@ -37,10 +37,12 @@ class AbastecimientosController extends Controller
      */
     public function store(Request $request)
     {
-        $Abastecimientos = new abastecimiento();
-        $Abastecimientos->PUNTnombre = $request->PUNTnombre;
-        $Abastecimientos->save();
-        return Redirect()->route('abastecimientos.index',$Abastecimientos);
+        $abastecimientos = new abastecimiento();
+        $abastecimientos->nombre = $request->nombre;
+        $abastecimientos->ubicacion = $request->ubicacion;
+        $abastecimientos->horario_atencion = $request->horario_atencion ;
+        $abastecimientos->save();
+        return Redirect()->route('abastecimientos.index',$abastecimientos);
     }
 
     /**

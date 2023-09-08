@@ -9,9 +9,14 @@ class compra extends Model
 {
     use HasFactory;
 
-    // relacion uno a muchos inversa con cliente
-    public function cliente()
+    public function carritoCompra()
     {
-        return $this->belongsTo('App\Models\cliente');
+        return $this->belongsTo('App\Models\carrito_compra');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+    
 }

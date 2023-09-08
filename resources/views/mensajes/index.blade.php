@@ -5,7 +5,9 @@
 <table>
     <thead>
         <tr>
-            <th> nombre <span class=""></span></th>
+            <th>  id <span class=""></span></th>
+            <th>  user_id <span class=""></span></th>
+            <th>  nombre_chat<span class=""></span></th>
             
      
         </tr>
@@ -14,7 +16,8 @@
     <tbody>
         <tr>
             <td>{{$mensaje->id}} </td>
-            <td>{{$mensaje->MENnombre_chat}}</td>
+            <td>{{$mensaje->user_id}}</td>
+            <td>{{$mensaje->nombre_chat}}</td>
             
          
             <td>

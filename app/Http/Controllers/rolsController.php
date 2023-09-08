@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\administrador;
+use App\Models\rol;
 use Illuminate\Http\Request;
-use App\Models\venta;
 
-class ventasController extends Controller
+class rolsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class ventasController extends Controller
      */
     public function index()
     {
-        $venta=venta::all();
-        return view('ventas.index' , compact('venta'));
+        $rols= rol::all();
+        return view('rols.index',compact('rols'));
     }
 
     /**
@@ -26,7 +25,7 @@ class ventasController extends Controller
      */
     public function create()
     {
-        return view('ventas.create'); 
+        return view('rols.create');
     }
 
     /**
@@ -37,12 +36,11 @@ class ventasController extends Controller
      */
     public function store(Request $request)
     {
-        $ventas= new venta();
-        $ventas->VENTcarrito_compra=$request->VENTcarrito_compra;
-         $ventas->save();
-      
-
-         return Redirect()->route('ventas.index',$ventas);
+        
+        $rols = new rol();
+        $rols->nombre = $request->nombre;
+        $rols->save();
+        return Redirect()->route('rols.index',$rols);
     }
 
     /**

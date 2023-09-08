@@ -15,16 +15,12 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('PRODUCTnombres');
-            $table->string('PRODUCTtiempo_reclamo');
-
-          // $table->unsignedBigInteger('user_id'); // Clave foránea
-          //  $table->unsignedBigInteger('cliente_id'); 
-
-           // $table->foreign('user_id')->references('id')->on('users');
-           // $table->foreign('cliente_id')->references('id')->on('clientes');
-            
+           $table->unsignedBigInteger('user_id');
+            $table->string('nombres');
+            $table->string('tiempo_reclamo');
+            $table->string('imagen');
             $table->timestamps();
+           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

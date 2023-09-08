@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AbastecimientosController;
 use App\Http\Controllers\administradoresController;
+use App\Http\Controllers\carrito_comprasController;
 use App\Http\Controllers\clientesController;
 use App\Http\Controllers\comprasController;
 use Illuminate\Support\Facades\Route;
@@ -9,9 +10,12 @@ use App\Http\Controllers\productosController;
 use App\Http\Controllers\ventasController;
 use App\Http\Controllers\mensajesController;
 use App\Http\Controllers\pagosController;
+use App\Http\Controllers\pqrsController;
+use App\Http\Controllers\rolsController;
 use App\Http\Controllers\usersController;
 
 use App\Models\administradores;
+use App\Models\pqr;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,31 +31,21 @@ use App\Models\administradores;
 Route::get('/', function () {
     return view('welcome');
 });
-//clientes
-Route::get('clientes/create', [clientesController::class, 'create'])->name('clientes.create'); 
-Route::post('clientes', [clientesController::class, 'store'])->name('clientes.store');
-Route::get('clientes', [clientesController::class, 'index'])->name('clientes.index');
 
-// editar
-
-
+ //users
+ Route::get('users/create', [usersController::class, 'create'])->name('users.create');
+ Route::post('users', [usersController::class, 'store'])->name('users.store');
+ Route::get('users', [usersController::class, 'index'])->name('users.index');
+ 
+ //editar
+ Route::get('users/{user}/edit', [usersController::class, 'edit'])->name('users.edit');
+ Route::put('users/{user}', [usersController::class, 'update'])->name('users.update');
 
 
  //productos
 Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
 Route::post('productos', [productosController::class, 'store'])->name('productos.store');
 Route::get('productos', [productosController::class, 'index'])->name('productos.index');
-
-//administrador
-
-Route::get('administradores/create', [administradoresController::class, 'create'])->name('administradores.create');
-Route::post('administradores', [administradoresController::class, 'store'])->name('administradores.store');
-Route::get('administradores', [administradoresController::class, 'index'])->name('administradores.index');
-
-//ventas
-Route::get('ventas/create', [ventasController::class, 'create'])->name('ventas.create');
-Route::post('ventas', [ventasController::class, 'store'])->name('ventas.store');
-Route::get('ventas', [ventasController::class, 'index'])->name('ventas.index');
 
 //mensajes
 Route::get('mensajes/create', [mensajesController::class, 'create'])->name('mensajes.create');
@@ -73,14 +67,25 @@ Route::get('compras/create', [comprasController::class, 'create'])->name('compra
 Route::post('compras', [comprasController::class, 'store'])->name('compras.store');
 Route::get('compras', [comprasController::class, 'index'])->name('compras.index');
 
- //users
-Route::get('users/create', [usersController::class, 'create'])->name('users.create');
-Route::post('users', [usersController::class, 'store'])->name('users.store');
-Route::get('users', [usersController::class, 'index'])->name('users.index');
+//rols
+Route::get('rols/create', [rolsController::class, 'create'])->name('rols.create');
+Route::post('rols', [rolsController::class, 'store'])->name('rols.store');
+Route::get('rols', [rolsController::class, 'index'])->name('rols.index');
 
-//editar
-Route::get('users/{user}/edit', [usersController::class, 'edit'])->name('users.edit');
-Route::put('users/{user}', [usersController::class, 'update'])->name('users.update');
+
+//pqr
+Route::get('pqrs/create', [pqrsController::class, 'create'])->name('pqrs.create');
+Route::post('pqrs', [pqrsController::class, 'store'])->name('pqrs.store');
+Route::get('pqrs', [pqrsController::class, 'index'])->name('pqrs.index');
+
+
+//carrito de compras
+Route::get('cars/create', [carrito_comprasController::class, 'create'])->name('cars.create');
+Route::post('cars', [carrito_comprasController::class, 'store'])->name('cars.store');
+Route::get('cars', [carrito_comprasController::class, 'index'])->name('cars.index');
+
+
+
 
 
 

@@ -15,13 +15,15 @@ class CreateComprasTable extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente_id'); // Clave foránea
-            $table->string('COMPqr');
-            $table->string('COMPcantida');
-            $table->string('COMPcarrito_compra');
-
+            $table->unsignedBigInteger('user_id'); 
+            $table->unsignedBigInteger('carrito_compra_id');
+            $table->string('qr');
+            $table->string('cantida');
             $table->timestamps();
-            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('carrito_compra_id')->references('id')->on('carrito_compras')->onDelete('cascade');
+
+
         });
     }
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\producto;
-
+use Illuminate\Foundation\Auth\User;
 
 class productosController extends Controller
 {
@@ -16,6 +16,14 @@ class productosController extends Controller
     public function index()
     {
         $productos= producto::all();
+ 
+        foreach ($productos as $producto) {
+            if ($producto->imagen) {
+                $producto->imagen = asset('storage/product/' . $producto->imagen);
+            }
+        }
+        
+        
      return view('productos.index',compact('productos'));
     
     }
@@ -28,7 +36,8 @@ class productosController extends Controller
      */
     public function create()
     {
-  return view('productos.create');
+        $users = User::all();
+  return view('productos.create' , compact('users'));
 
      
     }
@@ -42,11 +51,24 @@ class productosController extends Controller
     public function store(Request $request)
     {
         $productos= new producto();
-        $productos->PRODUCTnombres=$request->PRODUCTnombres;
-        $productos->PRODUCTtiempo_reclamo=$request->PRODUCTtiempo_reclamo;
+        $productos->nombres=$request->nombres;
+        $productos->tiempo_reclamo=$request->tiempo_reclamo;
+        $productos->imagen=$request->imagen;
+        $productos->user_id=$request->user_id;
+
+  
+        if ($request->hasFile('imagen')) {
+            $imageName = time() . '.' . $request->file('imagen')->getClientOriginalExtension();
+            $imagenPath = $request->file('imagen')->storeAs('productos', $imageName, 'public');
+            $productos->imagen = $imageName; // Almacena solo el nombre del archivo
+           //$product->image = $imagenPath;
+
+        }
+
+
         $productos->save();
 
-        return Redirect()->route('productos.index',$productos);
+         return Redirect()->route('productos.index',$productos); 
 
         
     }

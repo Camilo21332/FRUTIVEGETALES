@@ -2,16 +2,14 @@
 
 @section('content')
     
-    <h1>Pago</h1>
-
-<form action="{{ route('pagos.store') }}" method="POST">
+<form action="{{ route('cars.store') }}" method="POST">
 
     @csrf
   <label>
-   pago
+   cantida
     <br>
     <br>
-    <input type="text" name="facturas">
+    <input type="text" name="cantida_productos">
 </label>
 <br>
 <label>
@@ -25,8 +23,19 @@
 </label>
  <br>
  <br>
+
+ <label>
+    Selecciona un Producto
+    <br>
+    <select name="producto_id">
+        @foreach ($productos as $producto)
+            <option value="{{ $producto->id }}">{{ $producto->nombres }}</option>
+        @endforeach
+    </select>
+</label>
+<br>
+
 <button type="submit">Enviar formulario</button>
 </form>
 
 @endsection
-

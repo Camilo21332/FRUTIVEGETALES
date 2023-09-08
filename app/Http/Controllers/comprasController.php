@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\carrito_compra;
 use App\Models\compra;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class comprasController extends Controller
@@ -25,7 +27,11 @@ class comprasController extends Controller
      */
     public function create()
     {
-        return view('compras.create');   
+
+        $users = User::all(); 
+        $carritos = carrito_compra::all(); 
+        return view('compras.create', compact('users', 'carritos'));
+
     }
 
     /**
@@ -37,9 +43,10 @@ class comprasController extends Controller
     public function store(Request $request)
     {
         $compras = new compra();
-        $compras->COMPqr = $request->COMPqr;
-        $compras->COMPcantida = $request->COMPcantida;
-        $compras->COMPcarrito_compra = $request->COMPcarrito_compra;
+        $compras->qr = $request->qr;
+        $compras->cantida = $request->cantida;
+        $compras->user_id=$request->user_id;
+        $compras->carrito_compra_id=$request->carrito_compra_id;
         $compras->save();
         return Redirect()->route('compras.index',$compras);
     }

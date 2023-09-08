@@ -5,17 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class producto extends Model
+class carrito_compra extends Model
 {
     use HasFactory;
-
     
     public function user()
     {
         return $this->belongsTo('App\Models\User');
     }
-    public function carritosCompras()
+    public function producto()
     {
-        return $this->hasMany('App\Models\carrito_compra');
+        return $this->belongsTo('App\Models\producto');
+    }
+
+    public function compras()
+    {
+        return $this->hasMany('App\Models\compra');
     }
 }

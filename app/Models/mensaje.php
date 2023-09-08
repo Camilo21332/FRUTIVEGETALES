@@ -8,12 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class mensaje extends Model
 {
     use HasFactory;
-
-       //Relacion Uno a Muchos (Inversa) con administardor
-       public function administradors(){
-        return $this->belongsTo('App\Models\administrador');
-    }
-
     //Relacion Uno a Muchos (Inversa) con user
     public function users(){
         return $this->belongsTo('App\Models\user');

@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class pago extends Model
 {
     use HasFactory;
-// relacion uno a muchos inversa con clientes
-    public function clientes()
+
+    public function user()
     {
-        return $this->belongsTo('App\Models\cliente');
+        return $this->belongsTo('App\Models\User');
     }
 }

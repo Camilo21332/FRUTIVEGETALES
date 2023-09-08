@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\abastecimiento;
+use App\Models\rol;
 use App\Models\user;
 use Illuminate\Http\Request;
 
@@ -25,7 +27,11 @@ class usersController extends Controller
      */
     public function create()
     {
-        return view('users.create');//
+        $rols = rol::all();
+        $abastecimientos = abastecimiento::all();
+
+
+        return view('users.create', compact('rols', 'abastecimientos'));//
     }
 
     /**
@@ -37,12 +43,14 @@ class usersController extends Controller
     public function store(Request $request)
     {
         $users= new user();
-        $users->USUnombres=$request->USUnombres;
-        $users->USUapellidos=$request->USUapellidos;
-        $users->USUedad=$request->USUedad;
-        $users->USUtelefono=$request->USUtelefono;
-        $users->USUemail=$request->USUemail;
-        $users->USUcontraseña=$request->USUcontraseña;
+        $users->nombres=$request->nombres;
+        $users->apellidos=$request->apellidos;
+        $users->edad=$request->edad;
+        $users->telefono=$request->telefono;
+        $users->email=$request->email;
+        $users->contraseña=$request->contraseña;
+        $users->abastecimiento_id=$request->abastecimiento_id;
+        $users->rol_id=$request->rol_id;
         $users->save();
         return Redirect()->route('users.index',$users);
     }
@@ -66,7 +74,9 @@ class usersController extends Controller
      */
     public function edit(user $user)
     {
-        return view('users.edit', compact('user'));
+        $rols = Rol::all(); 
+        $abastecimientos = Abastecimiento::all(); 
+        return view('users.edit', compact('user', 'rols','abastecimientos'));
     }
 
     /**
@@ -78,9 +88,19 @@ class usersController extends Controller
      */
     public function update(Request $request, user $user)
     {
-      $data = $request->only( 'USUnombres' , 'USUapellidos' , 'USUedad' , 'USUtelefono' , 'USUemail' , 'USUcontraseña');
+        $data = $request->validate([
+            'nombres' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'edad' => 'integer',
+            'telefono' => 'integer',
+            'email' => 'required|email|max:255',
+            'contraseña' => 'string|max:255',
+            'rol_id' => 'exists:rols,id', 
+            'abastecimiento_id' => 'exists:abastecimientos,id',
+        ]);
 
       $user->update($data);
+      
       return redirect()->route('users.index');
 
     }

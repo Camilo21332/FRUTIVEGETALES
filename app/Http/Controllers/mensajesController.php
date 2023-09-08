@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\mensaje;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; 
 
 class mensajesController extends Controller
 {
@@ -25,7 +27,8 @@ class mensajesController extends Controller
      */
     public function create()
     {
-        return view('mensajes.create');
+        $users = User::all();
+        return view('mensajes.create', compact('users') );
     }
 
     /**
@@ -37,7 +40,8 @@ class mensajesController extends Controller
     public function store(Request $request)
     {
         $mensajes = new mensaje();
-        $mensajes->MENnombre_chat = $request->MENnombre_chat;
+        $mensajes->nombre_chat = $request->nombre_chat;
+        $mensajes->user_id=$request->user_id;
         $mensajes->save();
         return Redirect()->route('mensajes.index',$mensajes);
     }

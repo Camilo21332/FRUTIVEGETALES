@@ -7,17 +7,17 @@
         <tr>
             <th> id <span class=""></span></th>
             <th> user_id <span class=""></span></th>
-            <th> nombre <span class=""></span></th>
+            <th> motivo <span class=""></span></th>
             
      
         </tr>
     </thead>
-    @foreach ($pago as $pago)
+    @foreach ($pqrs as $pqr)
     <tbody>
         <tr>
-            <td>{{$pago->id}} </td>
-            <td>{{$pago->user_id}}</td>
-            <td>{{$pago->facturas}}</td>
+            <td>{{$pqr->id}} </td>
+            <td>{{$pqr->user_id}}</td>
+            <td>{{$pqr->motivo}}</td>
             
          
             <td>

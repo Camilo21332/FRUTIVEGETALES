@@ -8,6 +8,9 @@
         <table>
     <thead>
         <tr>
+            <th> id <span class=""></span></th>
+            <th> rol_id<span class=""></span></th>
+            <th> abastecimiento_id <span class=""></span></th>
             <th> nombres <span class=""></span></th>
             <th> apellidos<span class=""></span></th>
             <th> edad<span class=""></span></th>
@@ -22,12 +25,14 @@
     <tbody>
         <tr>
             <td>{{$user->id}} </td>
-            <td>{{$user->USUnombres}}</td>
-            <td>{{$user->USUapellidos}}</td>
-            <td>{{$user->USUedad}}</td>
-            <td>{{$user->USUtelefono}}</td>
-            <td>{{$user->USUemail}}</td>
-            <td>{{$user->USUcontraseña}}</td>
+            <td>{{$user->rol_id}}</td>
+            <td>{{$user->abastecimiento_id}}</td>
+            <td>{{$user->nombres}}</td>
+            <td>{{$user->apellidos}}</td>
+            <td>{{$user->edad}}</td>
+            <td>{{$user->telefono}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->contraseña}}</td>
          
             <td>
              <a href="{{route('users.create') }}"><p class="usuario-table--agregar">Agregar </p></a>
@@ -37,8 +42,6 @@
     </tbody>
     @endforeach</td>
 </table>
-
-
 
 
 @endsection

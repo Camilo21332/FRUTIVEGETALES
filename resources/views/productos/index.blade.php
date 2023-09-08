@@ -5,29 +5,34 @@
 <table>
     <thead>
         <tr>
-            <th> Productos </th>
-            <th> Tiempo De Reclamo</th>
+            <th>ID</th>
+            <th>user_id</th>
+            <th>Productos</th>
+            <th>Tiempo de Reclamo</th>
+            <th>Imagen</th>
             <th>Acciones</th>
-            
         </tr>
     </thead>
-    @foreach ($productos as $producto)
     <tbody>
+        @foreach ($productos as $producto)
         <tr>
-            <td>{{$producto->id}} </td>
-            <td>{{$producto->PRODUCTnombres}}</td>
-            <td>{{$producto->PRODUCTtiempo_reclamo}}</td>
+            <td>{{$producto->id}}</td>
+            <td>{{$producto->user_id}}</td>
+            <td>{{$producto->nombres}}</td>
+            <td>{{$producto->tiempo_reclamo}}</td>
             <td>
-                <a href="{{route('productos.create')}}"><p>Agregar </p></a>
-               </td>
+                @if ($producto->imagen)
+                    <img src="{{ asset('storage/product/' . $producto->imagen) }}" alt="Imagen del producto">
+                @else
+                    No hay imagen
+                @endif
+            </td>
+            <td>
+                <a href="{{ route('productos.create') }}">Agregar</a>
+            </td>
         </tr>
-        
-
+        @endforeach
     </tbody>
-    @endforeach</td>
 </table>
-
-
-
 
 @endsection

@@ -13,7 +13,9 @@ class user extends Model
         'USUedad',
         'USUtelefono',
         'USUemail',
-        'USUcontraseña'
+        'USUcontraseña',
+        'rol_id', 
+        'abastecimiento_id'
         
     ];
     
@@ -23,10 +25,36 @@ class user extends Model
     public function mensajes(){
         return $this->hasMany('App\Models\mensaje');
     }
-
-
-    public function clientes()
+    public function pqrs()
     {
-        return $this->hasMany('App\Models\cliente');
+        return $this->hasMany('App\Models\pqr');
+    }
+
+    public function productos()
+    {
+        return $this->hasMany('App\Models\producto');
+    }
+    public function carritoCompras()
+    {
+        return $this->hasMany('App\Models\carrito_compra');
+    }
+
+    public function compras()
+    {
+        return $this->hasMany('App\Models\compra');
+    }
+
+    public function abastecimiento()
+    {
+        return $this->belongsTo('App\Models\abastecimiento');
+    }
+
+    public function rol()
+    {
+        return $this->belongsTo('App\Models\rol');
+    }
+    public function pagos()
+    {
+        return $this->hasMany('App\Models\pago');
     }
 }

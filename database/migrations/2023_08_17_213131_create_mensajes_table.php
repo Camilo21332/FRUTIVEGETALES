@@ -15,26 +15,11 @@ class CreateMensajesTable extends Migration
     {
         Schema::create('mensajes', function (Blueprint $table) {
             $table->id();
-           // $table->unsignedBigInteger('cliente_id')->nullable();
-            $table->unsignedBigInteger('user_id')->nullable();
-           $table->unsignedBigInteger('administrador_id')->nullable();
-            $table->string('MENnombre_chat');
-         
-       //relacion con cliente
-           /* $table->foreign('cliente_id')
-            ->references('id')
-            ->on('clientes')->onDelete('set null');*/
-
-            //relacion con user
-              $table->foreign('user_id')
-             ->references('id')
-              ->on('users')->onDelete('set null');
-
-            //relacion con adminstrador
-            $table->foreign('administrador_id')
-            ->references('id')
-            ->on('administradors')->onDelete('set null');
+            $table->unsignedBigInteger('user_id'); 
+            $table->string('nombre_chat');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+           
         });
     }
 

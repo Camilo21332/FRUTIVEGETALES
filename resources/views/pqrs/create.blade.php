@@ -2,16 +2,15 @@
 
 @section('content')
     
-    <h1>Pago</h1>
 
-<form action="{{ route('pagos.store') }}" method="POST">
+<form action="{{ route('pqrs.store') }}" method="POST">
 
     @csrf
   <label>
-   pago
+   motivo
     <br>
     <br>
-    <input type="text" name="facturas">
+    <input type="text" name="motivo">
 </label>
 <br>
 <label>
@@ -29,4 +28,3 @@
 </form>
 
 @endsection
-
