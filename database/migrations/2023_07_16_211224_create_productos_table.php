@@ -19,6 +19,7 @@ class CreateProductosTable extends Migration
             $table->string('nombres');
             $table->string('tiempo_reclamo');
             $table->string('imagen');
+            $table->integer('precio');
             $table->timestamps();
            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

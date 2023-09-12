@@ -1,41 +1,34 @@
-@extends('layouts.plantilla')
-
-@section('content')
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/formularios.css') }}">
+</head>
+<body>
+<div class="users-form">
 <form action="{{ route('cars.store') }}" method="POST">
-
     @csrf
-  <label>
-   cantida
-    <br>
-    <br>
-    <input type="text" name="cantida_productos">
-</label>
-<br>
-<label>
-    Selecciona un Usuario
-    <br>
-    <select name="user_id">
-        @foreach ($users as $user)
-            <option value="{{ $user->id }}"> {{ $user->id }} {{ $user->nombres }}</option>
-        @endforeach
-    </select>
-</label>
- <br>
- <br>
-
- <label>
-    Selecciona un Producto
-    <br>
-    <select name="producto_id">
-        @foreach ($productos as $producto)
-            <option value="{{ $producto->id }}">{{ $producto->nombres }}</option>
-        @endforeach
-    </select>
-</label>
-<br>
-
-<button type="submit">Enviar formulario</button>
+  <h1>crear carrito</h1>
+        <input type="text" name="cantida_productos" placeholder="cantida productos">
+   
+        <select name="user_id">
+            @foreach ($users as $user)
+                <option value="{{ $user->id }}">{{ $user->id }} {{ $user->nombres }}</option>
+            @endforeach
+        </select>
+  
+        <select name="producto_id">
+            @foreach ($productos as $producto)
+                <option value="{{ $producto->id }}">{{ $producto->nombres }}</option>
+            @endforeach
+        </select>
+    
+        <input type="submit" value="enviar formulario">
+</div>
 </form>
 
-@endsection
+<!-- Aquí puedes incluir más contenido HTML o scripts si es necesario -->
+
+</body>
+</html>

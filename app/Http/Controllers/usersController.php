@@ -29,8 +29,6 @@ class usersController extends Controller
     {
         $rols = rol::all();
         $abastecimientos = abastecimiento::all();
-
-
         return view('users.create', compact('rols', 'abastecimientos'));//
     }
 
@@ -72,8 +70,9 @@ class usersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(user $user)
+    public function edit( user $user)
     {
+
         $rols = Rol::all(); 
         $abastecimientos = Abastecimiento::all(); 
         return view('users.edit', compact('user', 'rols','abastecimientos'));
@@ -88,22 +87,20 @@ class usersController extends Controller
      */
     public function update(Request $request, user $user)
     {
-        $data = $request->validate([
-            'nombres' => 'required|string|max:255',
-            'apellidos' => 'required|string|max:255',
-            'edad' => 'integer',
-            'telefono' => 'integer',
-            'email' => 'required|email|max:255',
-            'contraseña' => 'string|max:255',
-            'rol_id' => 'exists:rols,id', 
-            'abastecimiento_id' => 'exists:abastecimientos,id',
-        ]);
-
-      $user->update($data);
-      
-      return redirect()->route('users.index');
+        $user->nombres=$request->nombres;
+        $user->apellidos=$request->apellidos;
+        $user->edad=$request->edad;
+        $user->telefono=$request->telefono;
+        $user->email=$request->email;
+        $user->contraseña=$request->contraseña;
+        $user->abastecimiento_id=$request->abastecimiento_id;
+        $user->rol_id=$request->rol_id;
+        $user->save();
+    
+        return redirect()->route('users.index')->with('success', 'Registro actualizado correctamente');
 
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -111,8 +108,10 @@ class usersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(user $user)
+    public function destroy($id)
     {
-        $user->delete();
+        $user = User::find($id)->delete();
+
+        return redirect()->route('users.index')->with('success', 'Usuario eliminado exitosamente');
     }
 }

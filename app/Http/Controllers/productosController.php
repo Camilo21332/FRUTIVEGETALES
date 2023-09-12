@@ -16,17 +16,26 @@ class productosController extends Controller
     public function index()
     {
         $productos= producto::all();
- 
-        foreach ($productos as $producto) {
-            if ($producto->imagen) {
-                $producto->imagen = asset('storage/product/' . $producto->imagen);
-            }
-        }
-        
-        
+
      return view('productos.index',compact('productos'));
     
     }
+
+    public function catalogo()
+    {
+        $productos = producto::all();
+       
+        foreach($productos as $producto){
+             if($producto->imagen){
+            $producto->imagen = asset('storage/productos/' . $producto->imagen);
+            }
+         } 
+          //  return $productos;
+     return view('index',compact('productos'));
+     
+    
+    }
+    
     
 
     /**
@@ -54,6 +63,7 @@ class productosController extends Controller
         $productos->nombres=$request->nombres;
         $productos->tiempo_reclamo=$request->tiempo_reclamo;
         $productos->imagen=$request->imagen;
+        $productos->precio=$request->precio;
         $productos->user_id=$request->user_id;
 
   
@@ -90,9 +100,10 @@ class productosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(producto $producto)
     {
-        //
+        $users = User::all(); 
+        return view('productos.edit', compact('producto', 'users'));
     }
 
     /**
@@ -102,9 +113,17 @@ class productosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, producto $producto)
     {
-        //
+        $producto->nombres=$request->nombres;
+        $producto->tiempo_reclamo=$request->tiempo_reclamo;
+        $producto->imagen=$request->imagen;
+        $producto->precio=$request->precio;
+        $producto->user_id=$request->user_id;
+        $producto->save();
+
+        return redirect()->route('productos.index')->with('success', 'Registro actualizado correctamente');
+
     }
 
     /**
@@ -115,6 +134,8 @@ class productosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = producto::find($id)->delete();
+
+        return redirect()->route('productos.index')->with('success', 'Usuario eliminado exitosamente');
     }
 }

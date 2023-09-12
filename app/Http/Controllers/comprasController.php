@@ -68,9 +68,12 @@ class comprasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(compra $compra)
     {
-        //
+        
+        $users = User::all(); 
+        $carrito_compras = carrito_compra::all(); 
+        return view('compras.edit', compact('compra', 'users','carrito_compras'));
     }
 
     /**
@@ -80,9 +83,14 @@ class comprasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, compra $compra)
     {
-        //
+        $compra->user_id=$request->user_id;
+        $compra->carrito_compra_id=$request->carrito_compra_id;
+        $compra->qr = $request->qr;
+        $compra->cantida = $request->cantida;
+        $compra->save();
+        return redirect()->route('compras.index')->with('success', 'Registro actualizado correctamente');
     }
 
     /**
@@ -93,6 +101,8 @@ class comprasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $compra = compra::find($id)->delete();
+
+        return redirect()->route('compras.index')->with('success', 'Usuario eliminado exitosamente');
     }
 }

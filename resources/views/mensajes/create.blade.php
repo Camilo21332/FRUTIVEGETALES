@@ -1,31 +1,28 @@
-@extends('layouts.plantilla')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@section('content')
-    
+    <link rel="stylesheet" href="{{ asset('css/formularios.css') }}">
 </head>
 <body>
-    <form action="{{route('mensajes.store')}}"method="post">@csrf  <label>
-         nombre_chat
-        <br>
-        <input type="text" name="nombre_chat">
-    </label>
-    <br>
-    
-    <label>
-        Selecciona un Usuario
-        <br>
-        <select name="user_id">
-            @foreach ($users as $user)
-                <option value="{{ $user->id }}"> {{ $user->id }} {{ $user->nombres }}</option>
-            @endforeach
-        </select>
-    </label>
-    <br><br>
+    <div  class="users-form"> 
+    <form action="{{ route('mensajes.store') }}" method="post">
+        @csrf
+       <h1>cear chat</h1>
+            <input type="text" name="nombre_chat" placeholder="nombre chat">
+     
+            <select name="user_id">
+                @foreach ($users as $user)
+                    <option value="{{ $user->id }}">{{ $user->id }} - {{ $user->nombres }}</option>
+                @endforeach
+            </select>
+            <input type="submit" value="enviar formulario">
+
+    </div>
+    </form>
 
 
-
-    <br><br>
-    <button type="submit">Enviar Formulario:</button> </form> 
-    
 </body>
 </html>

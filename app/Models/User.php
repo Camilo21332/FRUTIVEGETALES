@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class user extends Model
 {
     protected $fillable = [
-        'USUnombres' ,
-        'USUapellidos',
-        'USUedad',
-        'USUtelefono',
-        'USUemail',
-        'USUcontraseña',
+        'nombres' ,
+        'apellidos',
+        'edad',
+        'telefono',
+        'email',
+        'contraseña',
         'rol_id', 
         'abastecimiento_id'
         

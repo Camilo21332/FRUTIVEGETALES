@@ -60,9 +60,9 @@ class rolsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( rol $rol )
     {
-        //
+        return view('rols.edit', compact('rol'));
     }
 
     /**
@@ -72,9 +72,11 @@ class rolsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,rol $rol )
     {
-        //
+        $rol->nombre = $request->nombre;
+        $rol->save();
+        return redirect()->route('rols.index')->with('success', 'Registro actualizado correctamente');
     }
 
     /**
@@ -85,6 +87,10 @@ class rolsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rol = rol::find($id)->delete();
+
+        return redirect()->route('rols.index')->with('success', 'Usuario eliminado exitosamente');
     }
-}
+} 
+    
+

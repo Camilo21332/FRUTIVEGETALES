@@ -4,41 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('css/formularios.css') }}">
 </head>
 <body>
-    <form action="{{route('productos.store')}}"method="post" enctype="multipart/form-data">@csrf  <label>
-        Nombre_Productos
-        <br>
-        <input type="text" name="nombres">
-    </label>
-    <br>
-    <label>
-        Tiempo de reclamo
-        <br>
-        <input type="text" name="tiempo_reclamo">
-    </label>
-    
-    <br>
-    <label>
-        imagen
-        <br>
-        <input type="file" name="imagen">
-    </label>
-    <br>
+    <div class="users-form">
+        <h1>crear producto</h1>
+    <form action="{{route('productos.store')}}"method="post" enctype="multipart/form-data">@csrf 
+      
+        <input type="text" name="nombres" placeholder="nombres">
+ 
+        <input type="text" name="tiempo_reclamo" placeholder="tiempo reclamo">
 
-    <label>
-        Selecciona un Usuario
-        <br>
+        <input type="file" name="imagen">
+   
+ 
+  
+        <input type="number" name="precio" placeholder="precio">
+
         <select name="user_id">
             @foreach ($users as $user)
                 <option value="{{ $user->id }}"> {{ $user->id }} {{ $user->nombres }}</option>
             @endforeach
         </select>
-    </label>
-    <br>
-    <br><br>
-    <button type="submit">Enviar Formulario:</button> </form> 
+        <input type="submit" value="enviar formulario">
+</div>
+</form> 
 
 </body>
 </html>

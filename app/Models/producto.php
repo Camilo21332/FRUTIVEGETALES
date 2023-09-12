@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class producto extends Model
 {
+
+
+    protected $fillable = [
+        'user_id',
+        'nombres' ,
+        'tiempo_reclamo',
+        'imagen'
+    ];
     use HasFactory;
 
     

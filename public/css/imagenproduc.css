@@ -1,0 +1,77 @@
+
+/* Estilos para la tabla */
+.crud-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.crud-table th, .crud-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+}
+
+.crud-table th {
+    background-color: #0f0f0f;
+    color: #fbfafa;
+}
+
+/* Estilos para los botones */
+.delete-button, .add-button {
+    background-color: #fcda2eed;
+    color: #0c0c0c;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover, .add-button:hover {
+    background-color: #fafc83;
+}
+
+.edit-button {
+    background-color: #121212;
+    color: #fefdfd;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    color: #2980b9;
+}
+
+/* Estilo para la imagen del producto */
+.product-image {
+    max-width: 1000px; /* Ajusta el ancho máximo de la imagen según tus necesidades */
+     /* Mantiene la proporción original de la imagen */
+}
+
+/* Estilo para el mensaje de éxito */
+.alert-success {
+    background-color: #3cccf7;
+    color: #040404;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Estilo para la imagen del usuario */
+td img {
+    width: 40px;
+    height: 40px;
+    margin-right: .5rem;
+    border-width:  1000px;
+    vertical-align: middle;
+}

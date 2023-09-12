@@ -62,9 +62,9 @@ class AbastecimientosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(abastecimiento $abastecimiento)
     {
-        //
+        return view('abastecimientos.edit', compact('abastecimiento'));
     }
 
     /**
@@ -74,9 +74,14 @@ class AbastecimientosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, abastecimiento $abastecimiento)
     {
-        //
+        $abastecimiento->nombre = $request->nombre;
+        $abastecimiento->ubicacion = $request->ubicacion;
+        $abastecimiento->horario_atencion = $request->horario_atencion ;
+        $abastecimiento->save();
+        return redirect()->route('abastecimientos.index')->with('success', 'Registro actualizado correctamente');
+
     }
 
     /**
@@ -87,6 +92,8 @@ class AbastecimientosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $abastecimiento = abastecimiento::find($id)->delete();
+
+        return redirect()->route('abastecimientos.index')->with('success', 'Usuario eliminado exitosamente');
     }
 }

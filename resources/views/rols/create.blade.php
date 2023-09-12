@@ -1,18 +1,21 @@
-@extends('layouts.plantilla')
 
-@section('content')
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/formularios.css') }}">
 </head>
 <body>
-    <form action="{{route('rols.store')}}"method="post">@csrf  <label>
-        Nombre 
-        <br>
-        <input type="text" name="nombre">
-    </label>
-    <br>
-    
-    <br><br>
-    <button type="submit">Enviar Formulario:</button> </form> 
+    <div class="users-form">
+        <h1>crear rols</h1>
+    <form action="{{route('rols.store')}}"method="post">@csrf
+       
+        <input type="text" name="nombre" placeholder="nombre">
+        <input type="submit" value="enviar formulario">
+   
+</div>
+</form> 
     
 </body>
 </html>

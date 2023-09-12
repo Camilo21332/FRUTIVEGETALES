@@ -63,9 +63,10 @@ class mensajesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(mensaje $mensaje)
     {
-        //
+        $users = User::all(); 
+        return view('mensajes.edit', compact('mensaje', 'users'));
     }
 
     /**
@@ -75,9 +76,12 @@ class mensajesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, mensaje $mensaje)
     {
-        //
+        $mensaje->nombre_chat = $request->nombre_chat;
+        $mensaje->user_id=$request->user_id;
+        $mensaje->save();
+        return redirect()->route('mensajes.index')->with('success', 'Registro actualizado correctamente');
     }
 
     /**
@@ -88,6 +92,8 @@ class mensajesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mensaje = mensaje::find($id)->delete();
+
+        return redirect()->route('mensajes.index')->with('success', 'Usuario eliminado exitosamente');
     }
 }

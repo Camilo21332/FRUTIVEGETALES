@@ -67,9 +67,11 @@ class carrito_comprasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( carrito_compra $car)
     {
-        //
+        $users = User::all(); 
+        $productos = producto::all(); 
+        return view('cars.edit', compact('car', 'users','productos'));
     }
 
     /**
@@ -79,9 +81,13 @@ class carrito_comprasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,carrito_compra $car)
     {
-        //
+        $car->cantida_productos = $request->cantida_productos;
+        $car->user_id=$request->user_id;
+        $car->producto_id=$request->producto_id;
+        $car->save();
+        return redirect()->route('cars.index')->with('success', 'Registro actualizado correctamente');
     }
 
     /**
@@ -92,6 +98,9 @@ class carrito_comprasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $car = carrito_compra::find($id)->delete();
+
+        return redirect()->route('cars.index')->with('success', 'Usuario eliminado exitosamente');
+    } 
     }
-}
+

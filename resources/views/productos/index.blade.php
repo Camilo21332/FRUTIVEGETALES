@@ -1,8 +1,21 @@
-@extends('layouts.plantilla')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/imagenproduc.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
 
-@section('content')
-
-<table>
+    
+<table class="crud-table">
     <thead>
         <tr>
             <th>ID</th>
@@ -10,6 +23,7 @@
             <th>Productos</th>
             <th>Tiempo de Reclamo</th>
             <th>Imagen</th>
+            <th>Precio</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -22,17 +36,34 @@
             <td>{{$producto->tiempo_reclamo}}</td>
             <td>
                 @if ($producto->imagen)
-                    <img src="{{ asset('storage/product/' . $producto->imagen) }}" alt="Imagen del producto">
+                    <img class="product-image" src="{{ asset('storage/productos/' . $producto->imagen) }}" alt="Imagen del producto">
                 @else
                     No hay imagen
                 @endif
             </td>
+            <td>{{$producto->precio}}</td>
             <td>
-                <a href="{{ route('productos.create') }}">Agregar</a>
+                <form action="{{ route('productos.destroy', $producto->id) }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button class="delete-button" type="submit">Eliminar</button>
+                </form>
+
+                <form action="{{ route('productos.edit', $producto->id) }}" method="GET">
+                    @csrf
+                    <button class="edit-button" type="submit">Editar</button>
+                </form>
+
+
             </td>
         </tr>
-        @endforeach
+   
     </tbody>
+    @endforeach
 </table>
 
-@endsection
+
+<a class="add-button" href="{{ route('productos.create') }}">Agregar</a>
+
+</body>
+</html>

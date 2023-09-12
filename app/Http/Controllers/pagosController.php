@@ -66,9 +66,10 @@ class pagosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(pago $pago)
     {
-        //
+        $users = User::all(); 
+        return view('pagos.edit', compact('pago', 'users'));
     }
 
     /**
@@ -78,9 +79,12 @@ class pagosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, pago $pago)
     {
-        //
+        $pago->facturas = $request->facturas;
+        $pago->user_id=$request->user_id;
+        $pago->save();
+        return redirect()->route('pagos.index')->with('success', 'Registro actualizado correctamente');
     }
 
     /**
@@ -91,6 +95,8 @@ class pagosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pagos = pago::find($id)->delete();
+
+        return redirect()->route('pagos.index')->with('success', 'Usuario eliminado exitosamente');
     }
 }

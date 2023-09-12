@@ -5,31 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/formularios.css') }}">
     <title>Document</title>
 </head>
 
 <body>
-    <form action="{{ route('abastecimientos.store') }}"method="post">@csrf <label>
-            Nombre:
-            <br>
-            <input type="text" name="nombre">
-        </label>
-        <br>
-        
-        ubicacion:
-        <br>
-        <input type="text" name="ubicacion">
-    </label>
-    <br>
+    <h1>crear abastecimiento</h1>
+    <div class="users-form">
+    <form action="{{ route('abastecimientos.store') }}"method="post">
+        @csrf 
+            
+            <input type="text" name="nombre" placeholder="nombre">
+    
+        <input type="text" name="ubicacion" placeholder="ubicacion">
 
-    horario de atencion:
-    <br>
-    <input type="text" name="horario_atencion">
-</label>
-<br>
+         <input type="text" name="horario_atencion" placeholder="horario_atencion">
 
-        <br><br>
-        <button type="submit">Enviar Formulario:</button>
+         <input type="submit" value="enviar formulario">
+    </div>
     </form>
 
 </body>
