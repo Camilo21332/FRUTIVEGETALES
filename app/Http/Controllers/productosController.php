@@ -36,6 +36,23 @@ class productosController extends Controller
     
     }
     
+    public function inorganico()
+    {
+        $productos = producto::all();
+       
+        foreach($productos as $producto){
+             if($producto->imagen){
+            $producto->imagen = asset('storage/productos/' . $producto->imagen);
+            }
+         } 
+          //  return $productos;
+     return view('inorganico',compact('productos'));
+     
+    
+    }
+
+
+
     
 
     /**

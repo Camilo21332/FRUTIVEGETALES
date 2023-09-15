@@ -15,6 +15,8 @@
     @endif
 
     
+
+
 <table class="crud-table">
     <thead>
         <tr>
@@ -64,6 +66,12 @@
 
 
 <a class="add-button" href="{{ route('productos.create') }}">Agregar</a>
+<br>
+<br>
+<div class="export__file">
+    <a href="{{ route('index') }}"><label for="export-file" class="export__file-btn"
+            title="Export File"></label>inicio</a>
+</div>
 
 </body>
 </html>

@@ -67,11 +67,9 @@
             <div class="navbar-nav w-100">
                 <div class="nav-item dropdown dropright">
        <!--categorias -->
-                   
                 </div>
                 <a href="{{route('organico')}}" class="nav-item nav-link">organicos</a>
-                <a href="{{route('inorganico')}} " class="nav-item nav-link">inorganicos</a>
-             
+                <a href="{{route('inorganico')}} " class="nav-item nav-link">inorganicos</a> 
             </div>
         </nav>
     </div>
@@ -100,11 +98,6 @@
 
                     <a href="{{route('contact')}}" class="nav-item nav-link">Contactenos</a>
                 </div>
-
-                
-                <!-- carrito y corazon -->
-         
-                <!---->
             </div>
         </nav>
     </div>
@@ -112,161 +105,37 @@
 </div>
 
 
-
-
-
-
-
-
-
-
+<!-- productos -->
 <div class="container-fluid pt-5 pb-3">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">inorganicos</span></h2>
     <div class="row px-xl-5">
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
-
+                @foreach ( $productos as $producto)
                 <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/papaya.jpg" alt="">
+                    <img class="img-fluid w-100" src="{{$producto->imagen}}" alt="">
                     <div class="product-action">
                         <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                         
                     </div>
                 </div>
                 <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">1 libra</a>
+                    <a class="h6 text-decoration-none text-truncate" href="">{{$producto->nombres}}</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>$4.000</h5><h6 class="text-muted ml-2"><del>$4.000</del></h6>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <div class="product-item bg-light mb-4">
-                <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/brocoli.jpg" alt="">
-                    <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                        
-                    </div>
-                </div>
-                <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">lechuga</a>
-                    <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>$5000</h5><h6 class="text-muted ml-2"><del>$5000</del></h6>
+                        <h5>{{$producto->precio}}</h5><h6 class="text-muted ml-2"><del></del></h6>
                     </div>
                   
                 </div>
+                @endforeach
             </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <div class="product-item bg-light mb-4">
-                <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/zanahoria.jpg" alt="">
-                    <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                        
-                    </div>
-                </div>
-                <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">libra</a>
-                    <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>$10000</h5><h6 class="text-muted ml-2"><del>$10000</del></h6>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <div class="product-item bg-light mb-4">
-                <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/zapote.jpg" alt="">
-                    <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                        
-                    </div>
-                </div>
-                <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">ajos</a>
-                    <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>$1000</h5><h6 class="text-muted ml-2"><del>$1000</del></h6>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <div class="product-item bg-light mb-4">
-                <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/pepino.jpg" alt="">
-                    <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                       
-                    </div>
-                </div>
-                <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">libra</a>
-                    <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>$3000</h5><h6 class="text-muted ml-2"><del>$3000</del></h6>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <div class="product-item bg-light mb-4">
-                <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/mango.jpg" alt="">
-                    <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                  
-                    </div>
-                </div>
-                <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">libra</a>
-                    <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>$5000</h5><h6 class="text-muted ml-2"><del>$5000</del></h6>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <div class="product-item bg-light mb-4">
-                <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/papas.jpg" alt="">
-                    <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                        
-                    </div>
-                </div>
-                <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">libra</a>
-                    <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>$1000</h5><h6 class="text-muted ml-2"><del>$1000</del></h6>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            <div class="product-item bg-light mb-4">
-                <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/naranja-1.jpg" alt="">
-                    <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                       
-                    </div>
-                </div>
-                <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">libras</a>
-                    <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>$8000</h5><h6 class="text-muted ml-2"><del>$8000</del></h6>
-                    </div>
-                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+    
+    
+            
+       

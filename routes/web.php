@@ -150,6 +150,8 @@ Route::delete('cars/{car}',[carrito_comprasController::class, 'destroy'])->name(
 
 //rutas para la interfas de la aplicacion
 Route::get('index',[ productosController::class ,'catalogo'])->name('index');
+Route::get('inorganico',[ productosController::class ,'inorganico'])->name('inorganico');
+
 
 /* Route::get('index', function () {
     return view('index');
@@ -162,13 +164,13 @@ Route::get('contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('organico', function () {
+ Route::get('organico', function () {
     return view('organico');
 })->name('organico');
 
-Route::get('inorganico', function () {
+/*Route::get('inorganico', function () {
     return view('inorganico');
-})->name('inorganico');
+})->name('inorganico');*/
 
 
 Route::get('cart', function () {
