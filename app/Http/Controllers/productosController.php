@@ -81,6 +81,7 @@ class productosController extends Controller
         $productos->tiempo_reclamo=$request->tiempo_reclamo;
         $productos->imagen=$request->imagen;
         $productos->precio=$request->precio;
+        $productos->descripcion=$request->descripcion;
         $productos->user_id=$request->user_id;
 
   
@@ -108,8 +109,15 @@ class productosController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto = producto::find($id);
+    
+        if (!$producto) {
+            abort(404); // Mostrar una página de error 404 si el producto no se encuentra
+        }
+    
+        return view('productos.detalle', compact('producto'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -136,6 +144,7 @@ class productosController extends Controller
         $producto->tiempo_reclamo=$request->tiempo_reclamo;
         $producto->imagen=$request->imagen;
         $producto->precio=$request->precio;
+        $producto->descripcion=$request->descripcion;
         $producto->user_id=$request->user_id;
         $producto->save();
 
@@ -155,4 +164,7 @@ class productosController extends Controller
 
         return redirect()->route('productos.index')->with('success', 'Usuario eliminado exitosamente');
     }
+
 }
+
+

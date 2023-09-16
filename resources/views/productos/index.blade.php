@@ -26,6 +26,7 @@
             <th>Tiempo de Reclamo</th>
             <th>Imagen</th>
             <th>Precio</th>
+            <th>descripcion</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -36,6 +37,7 @@
             <td>{{$producto->user_id}}</td>
             <td>{{$producto->nombres}}</td>
             <td>{{$producto->tiempo_reclamo}}</td>
+         
             <td>
                 @if ($producto->imagen)
                     <img class="product-image" src="{{ asset('storage/productos/' . $producto->imagen) }}" alt="Imagen del producto">
@@ -44,6 +46,7 @@
                 @endif
             </td>
             <td>{{$producto->precio}}</td>
+            <td>{{$producto->descripcion}}</td>
             <td>
                 <form action="{{ route('productos.destroy', $producto->id) }}" method="POST">
                     @csrf

@@ -38,9 +38,26 @@
                 </div>
             </div>
        
-        
+            <!-- parte del nombre aplicacion-->
+        </div>
+        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+            <div class="col-lg-4">
+                <a href="" class="text-decoration-none">
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">fruti</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">vegetal</span>
+                </a>
+            </div>
             <div class="col-lg-4 col-6 text-left">
-              
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
 
 
                 <!--nombre de la clase que da estilos a la aplicacion-->
@@ -183,32 +200,34 @@
 
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">productos</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Productos</span></h2>
         <div class="row px-xl-5">
+            @foreach ($productos as $producto)
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    @foreach ( $productos as $producto)
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="{{$producto->imagen}}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">{{$producto->nombres}}</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{{ route('productos.show', $producto->id) }}">{{ $producto->nombres }}</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>{{$producto->precio}}</h5><h6 class="text-muted ml-2"><del></del></h6>
+                            <h5>{{ $producto->precio }}</h5><h6 class="text-muted ml-3"><del></del></h6>
                         </div>
-                      
+                        <a class="btn btn-primary mt-3" href="{{ route('productos.show', $producto->id) }}">Ver Detalles</a>
+
                     </div>
-                    @endforeach
-                </div>
+                        
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
+    
+    
     <!-- Products End -->
 
     <!-- parte inferior-->

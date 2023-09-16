@@ -38,6 +38,13 @@
 <br>
 <br>
 
+<br>
+<br>
+        <label for="descripcion">descripcion</label>
+        <input type="text" name="descripcion" id="descripcion" value="{{ $producto->descripcion }}" autofocus>
+<br>
+<br>
+
         <label for="imagen_actual">Imagen Actual:</label>
         @if ($producto->imagen)
             <img src="{{ asset('storage/productos/' . $producto->imagen) }}" alt="Imagen actual del producto" class="imagen-producto">

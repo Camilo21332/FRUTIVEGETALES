@@ -49,6 +49,8 @@ Route::delete('users/{users}',[usersController::class, 'destroy'])->name('users.
 Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
 Route::post('productos', [productosController::class, 'store'])->name('productos.store');
 Route::get('productos', [productosController::class, 'index'])->name('productos.index');
+Route::get('productos/{producto}', [productosController::class, 'show'])->name('productos.show');
+
 
 //editar
 Route::get('productos/{producto}/edit', [productosController::class, 'edit'])->name('productos.edit');

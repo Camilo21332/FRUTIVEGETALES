@@ -20,6 +20,9 @@
  
   
         <input type="number" name="precio" placeholder="precio">
+        
+  
+        <input type="text" name="descripcion" placeholder="descrpcion">
 
         <select name="user_id">
             @foreach ($users as $user)
