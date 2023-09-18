@@ -24,7 +24,7 @@ use App\Http\Controllers\usersController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Auth.login');
 });
 
 
@@ -192,7 +192,6 @@ Route::get('cart', function () {
 Route::get('pqrs', function () {
     return view('pqrs');
 })->name('pqrs');
-
 
 
 

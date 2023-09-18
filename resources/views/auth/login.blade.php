@@ -8,6 +8,12 @@
     <!-- Agrega tus enlaces a hojas de estilo (CSS) aquí si es necesario -->
 </head>
 <body>
+    <form action="{{ route('users.create') }}" method="GET">
+        @csrf <!-- Agrega el token CSRF si es necesario -->
+      
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
