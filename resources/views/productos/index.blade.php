@@ -69,11 +69,7 @@
 
 
 <a class="add-button" href="{{ route('productos.create') }}">Agregar</a>
-<br>
-<br>
-<div class="export__file">
-    <a href="{{ route('index') }}"><label for="export-file" class="export__file-btn"
-            title="Export File"></label>inicio</a>
+<a class="add-button" href="{{route('index')}}">inicio</a>
 </div>
 
 </body>

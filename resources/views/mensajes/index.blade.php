@@ -50,6 +50,7 @@
 </table>
 
 <a class="add-button" href="{{route('mensajes.create')}}">Agregar</a>
+<a class="add-button" href="{{route('index')}}">inicio</a>
 </body>
 </html>
 

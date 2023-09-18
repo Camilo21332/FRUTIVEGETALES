@@ -114,9 +114,6 @@
                             </div>
 
                             <a href="{{route('contact')}}" class="nav-item nav-link">Contactenos</a>
-                            <a href="{{route('productos.index')}}" class="nav-item nav-link">Crear Productos</a>
-                         
-                            <a href="{{route('users.index')}}" class="nav-item nav-link">usuarios</a>
 
                             @auth
     <a href="{{ route('logout') }}" class="nav-item nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
@@ -124,6 +121,21 @@
         @csrf
     </form>
 @endauth
+
+
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">cruds<i class="fa fa-angle-down mt-1"></i></a>
+    <div class="dropdown-menu bg-white rounded-0 border-0 m-0">
+        <a href="{{ route('productos.index') }}" class="nav-item nav-link" style="color: black;">Crear Productos</a>
+        <a href="{{ route('users.index') }}" class="nav-item nav-link" style="color: black;">crear usuario</a>
+        <a href="{{ route('compras.index') }}" class="nav-item nav-link" style="color: black;">compras</a>
+        <a href="{{ route('cars.index') }}" class="nav-item nav-link" style="color: black;">carrito_compra</a>
+        <a href="{{ route('mensajes.index') }}" class="nav-item nav-link" style="color: black;">mensajes</a>
+        <a href="{{ route('pagos.index') }}" class="nav-item nav-link" style="color: black;">pagos</a>
+        <a href="{{ route('rols.index') }}" class="nav-item nav-link" style="color: black;">rols</a>
+    </div>
+</div>
+
 
 
 

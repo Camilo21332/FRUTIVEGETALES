@@ -48,6 +48,7 @@
     </table>
 
     <a class="add-button" href="{{route('abastecimientos.create')}}">Agregar</a>
+    <a class="add-button" href="{{route('index')}}">inicio</a>
 </body>
 </html>
 

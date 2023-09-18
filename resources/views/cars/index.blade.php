@@ -53,6 +53,7 @@
 </table>
     
     <a class="add-button" href="{{route('cars.create')}}">Agregar</a>
+    <a class="add-button" href="{{route('index')}}">inicio</a>
 </body>
 </html>
 

@@ -19,6 +19,7 @@
          
             <td>
              <a href="{{route('ventas.create')}}"><p class="status delivered">Agregar </p></a>
+             <a class="add-button" href="{{route('index')}}">inicio</a>
             </td>
 
     </tbody>
