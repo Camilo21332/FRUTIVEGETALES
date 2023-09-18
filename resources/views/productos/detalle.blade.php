@@ -15,7 +15,7 @@
             <p class="product-price">Precio: ${{ $producto->precio }}</p>
             <p class="product-description">{{ $producto->descripcion }}</p>
 
-            <a href="{{ route('index') }}" class="btn btn-primary">Volver al Índice</a>
+            <a href="{{ route('index') }}" class="btn btn-primary">inicio</a>
         </div>   
                 </div>
             </div>

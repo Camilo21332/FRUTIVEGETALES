@@ -2,23 +2,29 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user extends Model
+
+
+class user extends Authenticatable
+
 {
+
     protected $fillable = [
         'nombres' ,
         'apellidos',
         'edad',
         'telefono',
         'email',
-        'contraseña',
+        'password',
         'rol_id', 
         'abastecimiento_id'
         
     ];
     
+
     use HasFactory;
     
     // Relacion Uno a Muchos 

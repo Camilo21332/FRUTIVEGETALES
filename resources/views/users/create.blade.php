@@ -23,7 +23,7 @@
         
             <input type="text" name="email" placeholder="email">
             
-            <input type="password" name="contraseña" placeholder="contrseña">
+            <input type="password" name="password" placeholder="contrseña">
 
         <!-- Campo para seleccionar el rol -->
         <select name="rol_id" class="users-form">

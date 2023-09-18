@@ -93,8 +93,8 @@
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
-                        <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
-                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
+                        <span class="h1 text-uppercase text-dark bg-light px-2">fruti</span>
+                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">vegetal</span>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -115,6 +115,18 @@
 
                             <a href="{{route('contact')}}" class="nav-item nav-link">Contactenos</a>
                             <a href="{{route('productos.index')}}" class="nav-item nav-link">Crear Productos</a>
+                         
+                            <a href="{{route('users.index')}}" class="nav-item nav-link">usuarios</a>
+
+                            @auth
+    <a href="{{ route('logout') }}" class="nav-item nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+@endauth
+
+
+
                         </div>
 
                         

@@ -1,21 +1,16 @@
 <?php
 
 use App\Http\Controllers\AbastecimientosController;
-use App\Http\Controllers\administradoresController;
 use App\Http\Controllers\carrito_comprasController;
-use App\Http\Controllers\clientesController;
 use App\Http\Controllers\comprasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\productosController;
-use App\Http\Controllers\ventasController;
 use App\Http\Controllers\mensajesController;
 use App\Http\Controllers\pagosController;
 use App\Http\Controllers\pqrsController;
 use App\Http\Controllers\rolsController;
 use App\Http\Controllers\usersController;
 
-use App\Models\administradores;
-use App\Models\pqr;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +27,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+// Rutas de autenticación
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+
  //users
  Route::get('users/create', [usersController::class, 'create'])->name('users.create');
  Route::post('users', [usersController::class, 'store'])->name('users.store');
@@ -46,7 +49,14 @@ Route::delete('users/{users}',[usersController::class, 'destroy'])->name('users.
 ///////
 
  //productos
-Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
+//Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('productos/create', [ProductosController::class, 'create'])->name('productos.create');
+
+});
+
+
 Route::post('productos', [productosController::class, 'store'])->name('productos.store');
 Route::get('productos', [productosController::class, 'index'])->name('productos.index');
 Route::get('productos/{producto}', [productosController::class, 'show'])->name('productos.show');
@@ -185,4 +195,7 @@ Route::get('pqrs', function () {
 
 
 
-Route::get('cursos/create', [productosController::class, 'create']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

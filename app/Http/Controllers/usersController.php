@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\abastecimiento;
 use App\Models\rol;
 use App\Models\user;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class usersController extends Controller
 {
@@ -38,20 +40,21 @@ class usersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
-        $users= new user();
-        $users->nombres=$request->nombres;
-        $users->apellidos=$request->apellidos;
-        $users->edad=$request->edad;
-        $users->telefono=$request->telefono;
-        $users->email=$request->email;
-        $users->contraseña=$request->contraseña;
-        $users->abastecimiento_id=$request->abastecimiento_id;
-        $users->rol_id=$request->rol_id;
+        $users = new User();
+        $users->nombres = $request->nombres;
+        $users->apellidos = $request->apellidos;
+        $users->edad = $request->edad;
+        $users->telefono = $request->telefono;
+        $users->email = $request->email;
+        $users->password = bcrypt($request->password); // Encripta la contraseña
+        $users->abastecimiento_id = $request->abastecimiento_id;
+        $users->rol_id = $request->rol_id;
         $users->save();
-        return Redirect()->route('users.index',$users);
+        return redirect()->route('login', $users);
     }
+    
 
     /**
      * Display the specified resource.
@@ -92,7 +95,7 @@ class usersController extends Controller
         $user->edad=$request->edad;
         $user->telefono=$request->telefono;
         $user->email=$request->email;
-        $user->contraseña=$request->contraseña;
+        $user->password =$request->password;
         $user->abastecimiento_id=$request->abastecimiento_id;
         $user->rol_id=$request->rol_id;
         $user->save();

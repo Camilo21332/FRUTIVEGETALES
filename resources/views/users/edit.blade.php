@@ -29,7 +29,7 @@
             
             <input type="text" name="email" placeholder="email" value="{{ $user->email }}" autofocus>
        
-            <input type="password" name="contraseña"placeholder="contraseña" value="{{ $user->contraseña }}" autofocus>
+            <input type="password" name="password"placeholder="contraseña" value="{{ $user->password }}" autofocus>
   
    
 

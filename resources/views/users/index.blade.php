@@ -41,7 +41,7 @@
                 <td>{{$user->edad}}</td>
                 <td>{{$user->telefono}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->contraseña}}</td>
+                <td>{{$user->password}}</td>
                 <td>
                     <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                         @csrf

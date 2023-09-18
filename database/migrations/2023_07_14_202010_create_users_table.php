@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('edad');
             $table->integer('telefono');
             $table->string('email');
-            $table->string('contraseña');
+            $table->string('password');
             $table->timestamps();
             $table->foreign('abastecimiento_id')->references('id')->on('abastecimientos')->onDelete('cascade');
             $table->foreign('rol_id')->references('id')->on('rols')->onDelete('cascade');

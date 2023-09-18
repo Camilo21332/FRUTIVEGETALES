@@ -82,7 +82,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{route('index')}}" class="nav-item nav-link">inicio</a>
-                            <a href="shop.html" class="nav-item nav-link">pqrs</a>
+                            <a href="{{route('pqrs')}}" class="nav-item nav-link">pqrs</a>
                       
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">compras <i class="fa fa-angle-down mt-1"></i></a>
