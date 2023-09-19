@@ -103,7 +103,7 @@
                        <!--barra de opciones-->
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{route('index')}}" class="nav-item nav-link active">inicio</a>
-                            <a href="{{route('pqrs')}}" class="nav-item nav-link">pqrs</a>
+                            <a href="{{route('pqrs.create')}}" class="nav-item nav-link">pqrs</a>
                            
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">compras <i class="fa fa-angle-down mt-1"></i></a>
@@ -133,6 +133,7 @@
         <a href="{{ route('mensajes.index') }}" class="nav-item nav-link" style="color: black;">mensajes</a>
         <a href="{{ route('pagos.index') }}" class="nav-item nav-link" style="color: black;">pagos</a>
         <a href="{{ route('rols.index') }}" class="nav-item nav-link" style="color: black;">rols</a>
+        <a href="{{ route('pqrs.index') }}" class="nav-item nav-link" style="color: black;">pqrs</a>
     </div>
 </div>
 

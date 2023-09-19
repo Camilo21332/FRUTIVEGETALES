@@ -138,6 +138,13 @@ Route::get('pqrs/create', [pqrsController::class, 'create'])->name('pqrs.create'
 Route::post('pqrs', [pqrsController::class, 'store'])->name('pqrs.store');
 Route::get('pqr', [pqrsController::class, 'index'])->name('pqrs.index');
 
+//editar
+Route::get('pqrs/{id}/edit', [pqrsController::class, 'edit'])->name('pqrs.edit');
+Route::put('pqrs/{pqr}', [pqrsController::class, 'update'])->name('pqrs.update');
+
+
+//eliminar
+Route::delete('pqrs/{pqr}',[pqrsController::class, 'destroy'])->name('pqrs.destroy');
 
 
 

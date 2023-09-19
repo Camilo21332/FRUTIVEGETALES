@@ -6,6 +6,7 @@ use App\Models\pqr;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
+
 class pqrsController extends Controller
 {
     /**
@@ -15,8 +16,9 @@ class pqrsController extends Controller
      */
     public function index()
     {
-        $pqr=pqr::all();
-        return view('pqrs.index' , compact('pqr'));
+        $pqrs=pqr::all();
+        return view('pqrs.index', compact('pqrs'));
+
     }
 
     /**
@@ -26,9 +28,11 @@ class pqrsController extends Controller
      */
     public function create()
     {
-        $users = User::all();
-        return view('pqrs.create' ,compact('users')); 
+        $usuarios = User::all(); // Obtén la lista de usuarios registrados
+    
+        return view('pqrs.create', compact('usuarios'));
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -39,10 +43,15 @@ class pqrsController extends Controller
     public function store(Request $request)
     {
         $pqrs = new pqr();
-        $pqrs->motivo = $request->motivo;
         $pqrs->user_id=$request->user_id;
+        $pqrs->motivo = $request->motivo;
+        $pqrs->tipo=$request->tipo;
         $pqrs->save();
-        return Redirect()->route('pqrs.index',$pqrs);
+
+            // Guarda un mensaje de éxito en la sesión
+          session()->flash('success', 'La PQRS se ha enviado correctamente.');
+
+        return Redirect()->route('pqrs.create',$pqrs);
     }
 
     /**
@@ -53,7 +62,7 @@ class pqrsController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -64,7 +73,10 @@ class pqrsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pqr = pqr::find($id); // Encuentra el PQRS por su ID
+        $usuarios = User::all(); // Obtén la lista de usuarios registrados
+    
+        return view('pqrs.edit', compact('pqr', 'usuarios'));
     }
 
     /**
@@ -76,8 +88,19 @@ class pqrsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pqrs = pqr::find($id);
+        if (!$pqrs) {
+            return redirect()->route('pqrs.index')->with('error', 'El PQRS no existe.');
+        }
+    
+        $pqrs->user_id = $request->user_id;
+        $pqrs->motivo = $request->motivo;
+        $pqrs->tipo = $request->tipo;
+        $pqrs->save();
+    
+        return redirect()->route('pqrs.index')->with('success', 'Registro actualizado correctamente');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -87,6 +110,8 @@ class pqrsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pqrs = pqr::find($id)->delete();
+
+        return redirect()->route('pqrs.index')->with('success', 'Usuario eliminado exitosamente');
     }
 }
