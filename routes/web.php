@@ -161,7 +161,11 @@ Route::delete('cars/{car}',[carrito_comprasController::class, 'destroy'])->name(
 
 
 //rutas para la interfas de la aplicacion
+
+Route::middleware(['auth'])->group(function () {
 Route::get('index',[ productosController::class ,'catalogo'])->name('index');
+});
+
 Route::get('inorganico',[ productosController::class ,'inorganico'])->name('inorganico');
 
 

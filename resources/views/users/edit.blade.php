@@ -31,7 +31,6 @@
        
             <input type="password" name="password"placeholder="contraseña" value="{{ $user->password }}" autofocus>
   
-   
 
             <select name="rol_id"  class="users-form" autofocus>
                 @foreach($rols as $rol)

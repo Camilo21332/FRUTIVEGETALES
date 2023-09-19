@@ -56,7 +56,7 @@
         </tbody>
     </table>
 
-    <a class="add-button" href="{{route('users.create')}}">Agregar Usuario</a>
+ 
     <a class="add-button" href="{{route('index')}}">inicio</a>
 
     <!-- Agrega aquí tu contenido adicional si es necesario -->

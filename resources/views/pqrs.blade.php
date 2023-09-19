@@ -42,17 +42,7 @@
                   <span class="h1 text-uppercase text-primary bg-dark px-2">fruti</span>
                   <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">vegetal</span>
               </a>
-          </div>
-          <div class="col-lg-4 col-6 text-left">
-              <form action="">
-                  <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search for products">
-                      <div class="input-group-append">
-                          <span class="input-group-text bg-transparent text-primary">
-                              <i class="fa fa-search"></i>
-                          </span>
-                      </div>
-                  </div>
+     
               </form>
 
 
@@ -182,9 +172,24 @@
     <label for="mensaje">Mensaje:</label><br>
     <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
     <input type="submit" value="Enviar PQRS">
-</form
+</form>
 
 
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
 
 
   
