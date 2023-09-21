@@ -47,7 +47,7 @@
 
         <label for="imagen_actual">Imagen Actual:</label>
         @if ($producto->imagen)
-            <img src="{{ asset('storage/productos/' . $producto->imagen) }}" alt="Imagen actual del producto" class="imagen-producto">
+            <img src="{{ asset('storage/productos/' . $producto->imagen) }}" alt="Imagen actual del producto" class="imagen-producto" style="max-width: 300px; max-height: 300px;">
         @else
             <p>No hay imagen</p>
         @endif

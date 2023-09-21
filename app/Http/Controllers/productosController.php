@@ -140,17 +140,24 @@ class productosController extends Controller
      */
     public function update(Request $request, producto $producto)
     {
-        $producto->nombres=$request->nombres;
-        $producto->tiempo_reclamo=$request->tiempo_reclamo;
-        $producto->imagen=$request->imagen;
-        $producto->precio=$request->precio;
-        $producto->descripcion=$request->descripcion;
-        $producto->user_id=$request->user_id;
+        $producto->nombres = $request->nombres;
+        $producto->tiempo_reclamo = $request->tiempo_reclamo;
+        $producto->precio = $request->precio;
+        $producto->descripcion = $request->descripcion;
+        $producto->user_id = $request->user_id;
+    
+        // Verifica si se proporcionó una nueva imagen
+        if ($request->hasFile('nueva_imagen')) {
+            $imageName = time() . '.' . $request->file('nueva_imagen')->getClientOriginalExtension();
+            $imagenPath = $request->file('nueva_imagen')->storeAs('productos', $imageName, 'public');
+            $producto->imagen = $imageName; // Almacena solo el nombre del archivo
+        }
+    
         $producto->save();
-
+    
         return redirect()->route('productos.index')->with('success', 'Registro actualizado correctamente');
-
     }
+    
 
     /**
      * Remove the specified resource from storage.
