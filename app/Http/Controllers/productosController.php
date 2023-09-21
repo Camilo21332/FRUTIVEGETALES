@@ -84,11 +84,11 @@ class productosController extends Controller
         $productos->descripcion=$request->descripcion;
         $productos->user_id=$request->user_id;
 
-  
+          // Subir y almacenar la imagen
         if ($request->hasFile('imagen')) {
             $imageName = time() . '.' . $request->file('imagen')->getClientOriginalExtension();
             $imagenPath = $request->file('imagen')->storeAs('productos', $imageName, 'public');
-            $productos->imagen = $imageName; // Almacena solo el nombre del archivo
+            $productos->imagen = $imageName;
            //$product->image = $imagenPath;
 
         }
@@ -107,6 +107,8 @@ class productosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //para detalle del producto
     public function show($id)
     {
         $producto = producto::find($id);
@@ -140,17 +142,18 @@ class productosController extends Controller
      */
     public function update(Request $request, producto $producto)
     {
+         // Actualizar los campos
         $producto->nombres = $request->nombres;
         $producto->tiempo_reclamo = $request->tiempo_reclamo;
         $producto->precio = $request->precio;
         $producto->descripcion = $request->descripcion;
         $producto->user_id = $request->user_id;
     
-        // Verifica si se proporcionó una nueva imagen
+        // Verificar si se proporcionó una nueva imagen
         if ($request->hasFile('nueva_imagen')) {
             $imageName = time() . '.' . $request->file('nueva_imagen')->getClientOriginalExtension();
             $imagenPath = $request->file('nueva_imagen')->storeAs('productos', $imageName, 'public');
-            $producto->imagen = $imageName; // Almacena solo el nombre del archivo
+            $producto->imagen = $imageName; 
         }
     
         $producto->save();
