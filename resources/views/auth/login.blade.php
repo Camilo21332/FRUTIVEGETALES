@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pepe.css') }}">
+    
     <!-- Agrega tus enlaces a hojas de estilo (CSS) aquí si es necesario -->
 </head>
 <body>
@@ -19,7 +20,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                    
                     <div class="card-header">{{ __('Login') }}</div>
+                    <img src="{{ asset('/img/logito.jpg')}}"
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
