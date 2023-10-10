@@ -14,9 +14,6 @@
     </div>
     @endif
 
-    
-
-
 <table class="crud-table">
     <thead>
         <tr>

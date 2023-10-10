@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
 
 html {
@@ -39,8 +40,8 @@ a{
 .users-form form input[type=text]:focus,
 .users-form form input[type=password]:focus,
 .users-form form input[type=password]:focus{
-    border-color:rgb(253, 249, 129);
-    box-shadow:0 0 6px 0 rgb(247, 254, 98);
+    border-color:rgb(166, 251, 55);
+    box-shadow:rgb(166, 251, 55);
 }
 
 .users-form form input[type=submit]{
@@ -52,11 +53,11 @@ a{
     border-radius: 5px;
     background-color: white; 
     color: black; 
-    border: 2px solid #eef96c;
+    border: 2px solid #80fa4b;
 }
 
 .users-form form input[type=submit]:hover {
-    background-color: #f3fe5af3;
+    background-color: #80fa4b;
     color: rgb(6, 6, 6);
 }
 /* Estilos para el elemento select */

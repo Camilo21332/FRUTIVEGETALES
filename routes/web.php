@@ -49,12 +49,12 @@ Route::delete('users/{users}',[usersController::class, 'destroy'])->name('users.
 ///////
 
  //productos
-//Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
+Route::get('productos/create', [productosController::class, 'create'])->name('productos.create');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('productos/create', [ProductosController::class, 'create'])->name('productos.create');
+//Route::middleware(['auth'])->group(function () {
+ //   Route::get('productos/create', [ProductosController::class, 'create'])->name('productos.create');
 
-});
+//});
 
 
 Route::post('productos', [productosController::class, 'store'])->name('productos.store');
@@ -169,9 +169,10 @@ Route::delete('cars/{car}',[carrito_comprasController::class, 'destroy'])->name(
 
 //rutas para la interfas de la aplicacion
 
-Route::middleware(['auth'])->group(function () {
+/*Route::middleware(['auth'])->group(function () {
 Route::get('index',[ productosController::class ,'catalogo'])->name('index');
-});
+});*/
+Route::get('index',[ productosController::class ,'catalogo'])->name('index');
 
 Route::get('inorganico',[ productosController::class ,'inorganico'])->name('inorganico');
 

@@ -1,0 +1,31 @@
+/* Estilo para los campos de entrada */
+input[type="text"],
+input[type="email"],
+textarea {
+    border-radius: 10px; /* Redondea los bordes de los campos de entrada */
+    padding: 10px; /* Añade espacio interno para un mejor aspecto */
+    margin-bottom: 10px; /* Espacio entre los campos */
+}
+
+/* Estilo para el botón */
+.btn-primary {
+    background-color: #35ea35; /* Cambia el color de fondo del botón a tu elección */
+    color: #0c0c0c; /* Cambia el color del texto del botón a blanco o el color que prefieras */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 10px; /* Redondea los bordes del botón */
+    padding: 10px 20px; /* Ajusta el espaciado interno del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+
+}
+
+/* Estilo para el botón al pasar el cursor (hover) */
+.btn-primary:hover {
+    background-color: #070707;
+    background-color: #15c815; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+
+}
+.custom-title {
+    text-align: center; /* Centra el texto horizontalmente */
+    color: #15c815; /* Establece el color del texto en verde */
+    /* Otros estilos, como tamaño de fuente o márgenes, según tus preferencias */
+}

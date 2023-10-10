@@ -4,8 +4,8 @@
     width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #0c0c0c;
+    box-shadow:  #35ea35;
 }
 
 .crud-table th, .crud-table td {
@@ -21,7 +21,7 @@
 
 /* Estilos para los botones */
 .delete-button, .add-button {
-    background-color: #fcda2eed;
+    background-color:  #35ea35;
     color: #0c0c0c;
     padding: 10px 20px;
     border: none;
@@ -33,12 +33,12 @@
 }
 
 .delete-button:hover, .add-button:hover {
-    background-color: #fafc83;
+    background-color: #affc83;
 }
 
 .edit-button {
-    background-color: #121212;
-    color: #fefdfd;
+    background-color:  #35ea35;
+    color: #090909;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
