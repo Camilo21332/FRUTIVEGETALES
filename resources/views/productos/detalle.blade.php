@@ -19,7 +19,7 @@
      <link href="{{ asset('css/contac.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio3.css') }}" rel="stylesheet">
      <title>{{ $producto->nombres }}</title>
-     <link href="{{ asset('css/detalle1.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/detalle0.css') }}" rel="stylesheet">
 </head>
 
 <div class="container mt-1 mb-1">
@@ -97,7 +97,7 @@
             <p class="product-price">Precio: ${{ $producto->precio }}</p>
             <p class="product-description">{{ $producto->descripcion }}</p>
 
-            <a href="{{ route('index') }}" class="btn btn-primary-dos">inicio</a>
+            <a href="{{ route('index') }}" class="btn btn-primary-dos">Añadir a carrito</a>
         </div>   
                 </div>
             </div>
