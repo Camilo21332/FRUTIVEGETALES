@@ -55,17 +55,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav navbar-custom">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('pqrs.create')}}">PQRS</a>
-                    </li>
-<!--  menú desplegable -->
+                   
                     <li class="nav-item dropdown"> 
                         <a class="nav-link dropdown-toggle" href="#" id="categoriasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categorías
                         </a>
                         <div class="dropdown-menu" aria-labelledby="categoriasDropdown">
-                            <a class="dropdown-item" href="#">Orgánicos</a>
-                            <a class="dropdown-item" href="#">Inorgánicos</a>
+                            <a class="dropdown-item" href="{{route('inorganico')}}">Inorgánicos</a>
+                            <a class="dropdown-item" href="{{route('organico')}}">Orgánicos</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown"> 
@@ -80,7 +77,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact') }}">Contactenos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('pqrs.create')}}">PQRS</a>
+                    </li>
                 </ul>
+                
 
             </div>
         </div>

@@ -1,11 +1,8 @@
 
-
-
-
 /* Estilo para la imagen del producto */
 .product-image {
-    max-width: 1000px; /* Ajusta el ancho máximo de la imagen según tus necesidades */
-     /* Mantiene la proporción original de la imagen */
+    max-width: 1000px;
+   
 }
 
 /* Estilo para el mensaje de éxito */

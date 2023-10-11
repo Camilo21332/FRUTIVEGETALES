@@ -18,7 +18,9 @@
 </head>
 <nav>
     <div class="container-dos">
+        <a href="{{ route('index') }}">
             <img src="{{ asset('img/logito.jpg') }}" class="logo">
+        </a>
     </div>
 </nav>
 <br>

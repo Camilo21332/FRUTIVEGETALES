@@ -1,6 +1,5 @@
 
 /*color del nav*/
-
 .bg-success-light {
     background-color: #35ea35; 
 }
@@ -151,8 +150,8 @@
 }
 
 .fixed-size-image {
-    width: 200px; /* El tamaño fijo que desees para las imágenes */
-    height: 200px; /* El tamaño fijo que desees para las imágenes */
+    width: 200px; 
+    height: 200px; 
 }
 
 

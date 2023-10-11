@@ -51,7 +51,7 @@ class productosController extends Controller
     
     }
 
-
+ 
 
     
 
@@ -117,7 +117,7 @@ class productosController extends Controller
             abort(404); // Mostrar una página de error 404 si el producto no se encuentra
         }
     
-        return view('productos.detalle', compact('producto'));
+        return view('productos.detalle', compact('producto' ));
     }
     
 

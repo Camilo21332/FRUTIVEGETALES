@@ -61,5 +61,16 @@ label {
 .btn-primary:hover {
     background-color: #c0f994;
 }
+.container-tres {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:  #35ea35;
+}
 
-/* Puedes agregar más estilos según tus preferencias */
+/* Estilos del logo */
+.logo {
+    width: 90px; 
+    height: auto; 
+}

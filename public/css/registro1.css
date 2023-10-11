@@ -1,5 +1,5 @@
 body {
-    background-color: #f0f0f0; /* Cambia el color a tu elección */
+    background-color: #f0f0f0; 
 }
 .container-dos {
     display: flex;
@@ -11,8 +11,8 @@ body {
 
 /* Estilos del logo */
 .logo {
-    width: 100px; /* Ajusta el ancho según el tamaño de tu logotipo */
-    height: auto; /* Para mantener la proporción */
+    width: 100px; 
+    height: auto; 
 }
 
 /* Estilos específicos para el formulario */

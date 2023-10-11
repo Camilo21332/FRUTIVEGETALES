@@ -14,6 +14,7 @@
      <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio3.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio4.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/productos.css') }}" rel="stylesheet">
 </head>
 <body>
     
@@ -61,8 +62,9 @@
                             Categorías
                         </a>
                         <div class="dropdown-menu" aria-labelledby="categoriasDropdown">
-                            <a class="dropdown-item" href="#">Orgánicos</a>
-                            <a class="dropdown-item" href="#">Inorgánicos</a>
+                            <a class="dropdown-item" href="{{route('inorganico')}}">Inorgánicos</a>
+                            <a class="dropdown-item" href="{{route('organico')}}">Orgánicos</a>
+                         
                         </div>
                     </li>
                     <li class="nav-item dropdown"> 
@@ -97,6 +99,7 @@
                             <a class="dropdown-item" href="{{ route('pagos.index') }}">pagos</a>
                             <a class="dropdown-item" href="{{ route('rols.index') }}">rols</a>
                             <a class="dropdown-item" href="{{ route('pqrs.index') }}">PQRS</a>
+                            <a class="dropdown-item" href="{{ route('abastecimientos.index') }}">abastecimientos</a>
                         
                         </div>
                        
@@ -137,17 +140,17 @@
 <br>
 
 
-  <!-- Products Start -->
-  <div class="container-fluid pt-5 pb-3">
+ <!-- Products Start -->
+<div class="container-fluid pt-5 pb-3">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="">Productos destacados</span></h2>
     <div class="row px-xl-5">
         @foreach ($productos as $producto)
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
                 <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="{{$producto->imagen}}" alt="">
+                    <a href="{{ route('productos.show', $producto->id) }}"> <!-- Enlace al detalle del producto -->
+                    <img class="img-fluid product-image" src="{{$producto->imagen}}" alt="">
                     <div class="product-action">
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="text-center py-4">
@@ -155,17 +158,14 @@
                     <div class="d-flex align-items-center justify-content-center mt-2">
                         <h5>{{ $producto->precio }}</h5><h6 class="text-muted ml-3"><del></del></h6>
                     </div>
-                    <a class="btn btn-primary mt-3" href="{{ route('productos.show', $producto->id) }}">Ver Detalles</a>
-
-                </div>
-                    
+                    <a class="btn btn-primary mt-3" href="">añadir a carrito </a>
                 </div>
             </div>
-            @endforeach
         </div>
-  
+        @endforeach
     </div>
 </div>
+
 
 
 <footer>
@@ -206,7 +206,8 @@
 
 </footer>
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/productos.js"></script> <!-- Ruta al archivo JavaScript externo -->
 
   <!-- Template Javascript -->
   <script src="js/main.js"></script>

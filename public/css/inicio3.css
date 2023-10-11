@@ -2,7 +2,7 @@
     display: flex;
     justify-content: left;
     margin-top: 20px;
-    margin-left: 120px; /* Agregamos un margen izquierdo para mover los iconos hacia adelante */
+    margin-left: 120px;
 }
 
 .social-icon {
