@@ -14,7 +14,7 @@
      <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio3.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio4.css') }}" rel="stylesheet">
-     <link href="{{ asset('css/productos.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/producto1.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -87,7 +87,7 @@
 
  <!-- Products Start -->
  <div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="">Inorganicos</span></h2>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span style="color:#15c815 ;" >Inorganicos</span></h2>
     <div class="row px-xl-5">
         @foreach ($productos as $producto)
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">

@@ -15,7 +15,7 @@
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
      <link href="{{ asset('css/inicio2.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
-     <link href="{{ asset('css/contac.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/contac2.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio3.css') }}" rel="stylesheet">
 </head>
 
@@ -93,7 +93,7 @@
     <div class="row">
         <!-- Imagen a la izquierda -->
         <div class="col-lg-5">
-            <img src="{{ asset('img/verduras.jpg') }}" alt="Imagen de contacto" class="img-fluid" style="height: 100%; width: 100%; display: block;">
+            <img src="{{ asset('img/verduras.jpg') }}" alt="Imagen de contacto" class="img-fluid">
         </div>
         <!-- Formulario a la derecha -->
         <div class="col-lg-7">

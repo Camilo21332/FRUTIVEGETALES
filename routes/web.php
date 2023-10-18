@@ -205,7 +205,17 @@ Route::get('pqrs', function () {
     return view('pqrs');
 })->name('pqrs');
 
+Route::get('politicas', function () {
+    return view('politicas');
+})->name('politicas');
 
+Route::get('terminos', function () {
+    return view('terminos');
+})->name('terminos');
+
+Route::get('datospersonales', function () {
+    return view('datospersonales');
+})->name('datospersonales');
 
 Auth::routes();
 

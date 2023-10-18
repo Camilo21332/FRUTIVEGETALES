@@ -1,4 +1,3 @@
-/* Estilos para la sección de productos */
 .product-item {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -8,13 +7,12 @@
     justify-content: space-between;
 }
 
-
 .product-image {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.2s; 
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; /* Esto mantendrá la relación de aspecto y recortará la imagen si es necesario */
+    transition: transform 0.2s;
 }
-
 .product-image:hover {
     transform: scale(1.1); /* Efecto de zoom  */
 }

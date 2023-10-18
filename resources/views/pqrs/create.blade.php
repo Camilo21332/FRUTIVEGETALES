@@ -13,7 +13,7 @@
      <link href="{{ asset('css/inicio2.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio3.css') }}" rel="stylesheet">
-     <link href="{{ asset('css/inicio4.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/inicio6.css') }}" rel="stylesheet">
 </head>
 <body>
     @if(session('success'))

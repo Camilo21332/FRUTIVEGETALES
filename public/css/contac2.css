@@ -29,3 +29,10 @@ textarea {
     color: #15c815; 
 
 }
+.img-fluid{
+    border-radius: 21px 23px 34px 30px;
+	line-height: 200px;
+	text-align: center;
+	width: 616px;
+	height: 600px;
+}

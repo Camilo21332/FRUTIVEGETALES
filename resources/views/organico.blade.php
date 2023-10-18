@@ -17,6 +17,7 @@
      <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
      <link href="{{ asset('css/contac.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio3.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/producto1.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -89,27 +90,84 @@
 
 <!-- Products Start -->
 <div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="">organicos</span></h2>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span style="color:#15c815 ;">organicos</span></h2>
     <div class="row px-xl-5">
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
                 <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/tomates.jpg" alt="">
-                    <div class="product-action">
-                    </div>
+                    <a href=""> <!-- Enlace al detalle del producto -->
+                        <img class="img-fluid product-image" src="{{ asset('img/tomates.jpg') }}" alt="Nombre del producto">
+                    </a>
                 </div>
                 <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href=""></a>
+                    <a class="h6 text-decoration-none text-truncate" href="">Tomates</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5></h5><h6 class="text-muted ml-3"><del></del></h6>
+                        <h5>3000$</h5><h6 class="text-muted ml-3"><del></del></h6>
                     </div>
-                    <a class="btn btn-primary mt-3" href="">añadir a carrito </a>
+                    <a class="btn btn-primary mt-3" href="">añadir a carrito</a>
                 </div>
             </div>
         </div>
-      
+          <!-- Agregar el segundo producto -->
+          <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <a href=""> <!-- Enlace al detalle del producto -->
+                        <img class="img-fluid product-image" src="{{ asset('img/lechuga.jpg') }}" alt="Nombre del segundo producto">
+                    </a>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Lechuga</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>4000$</h5><h6 class="text-muted ml-3"><del></del></h6>
+                    </div>
+                    <a class="btn btn-primary mt-3" href="">añadir a carrito</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agregar el tercer producto -->
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <a href=""> <!-- Enlace al detalle del producto -->
+                        <img class="img-fluid product-image" src="{{ asset('img/lulos.jpg') }}" alt="Nombre del segundo producto">
+                    </a>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Lulos</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>2000$</h5><h6 class="text-muted ml-3"><del></del></h6>
+                    </div>
+                    <a class="btn btn-primary mt-3" href="">añadir a carrito</a>
+                </div>
+            </div>
+        </div>
+
+ <!-- Agregar el cuarto producto -->
+ <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+    <div class="product-item bg-light mb-4">
+        <div class="product-img position-relative overflow-hidden">
+            <a href=""> <!-- Enlace al detalle del producto -->
+                <img class="img-fluid product-image" src="{{ asset('img/mangos.jpg') }}" alt="Nombre del segundo producto">
+            </a>
+        </div>
+        <div class="text-center py-4">
+            <a class="h6 text-decoration-none text-truncate" href="">Lulos</a>
+            <div class="d-flex align-items-center justify-content-center mt-2">
+                <h5>2000$</h5><h6 class="text-muted ml-3"><del></del></h6>
+            </div>
+            <a class="btn btn-primary mt-3" href="">añadir a carrito</a>
+        </div>
     </div>
 </div>
+
+
+    </div>
+</div>
+
+
+
 
 
 
