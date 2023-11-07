@@ -101,25 +101,25 @@
                 <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3"></span></h2>
                 <h2 class="text-uppercase mx-xl-5 mb-4 custom-title">Déjanos tus datos</h2>
                 <div id="success"></div>
-                <form name="contactForm" id="contactForm" novalidate="novalidate">
+                <form name="contactForm" id="contactForm">
                     <div class="control-group">
-                        <input type="text" class="form-control " id="name" placeholder="Nombre" required="required" data-validation-required-message="Por favor, ingrese su nombre" />
+                        <input type="text" class="form-control" id="name" placeholder="Nombre" required="required" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="text" class="form-control " id="phone" placeholder="Teléfono" required="required" data-validation-required-message="Por favor, ingrese su teléfono" />
+                        <input type="text" class="form-control" id="phone" placeholder="Teléfono" required="required" pattern="[0-9]*">
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="number" class="form-control " id="age" placeholder="Edad" required="required" data-validation-required-message="Por favor, ingrese su edad" />
+                        <input type="number" class="form-control" id="age" placeholder="Edad" required="required" min="0">
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="email" class="form-control " id="email" placeholder="Correo Electrónico" required="required" data-validation-required-message="Por favor, ingrese su correo electrónico" />
+                        <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required="required">
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <textarea class="form-control " rows="8" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Por favor, ingrese su mensaje"></textarea>
+                        <textarea class="form-control" rows="8" id="message" placeholder="Consulta" required="required"></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="d-flex justify-content-center">
@@ -130,6 +130,45 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var age = document.getElementById("age").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        var errorMessages = [];
+
+        if (name.trim() === "") {
+            errorMessages.push("Por favor, ingrese su nombre.");
+        }
+
+        if (!/^\d+$/.test(phone)) {
+            errorMessages.push("El campo 'Teléfono' debe contener solo números.");
+        }
+
+        if (age.trim() === "" || age < 0) {
+            errorMessages.push("Por favor, ingrese una edad válida.");
+        }
+
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            errorMessages.push("Por favor, ingrese un correo electrónico válido.");
+        }
+
+        if (message.trim() === "") {
+            errorMessages.push("Por favor, ingrese su mensaje.");
+        }
+
+        if (errorMessages.length > 0) {
+            var errorMessage = errorMessages.join("\n");
+            alert(errorMessage);
+            event.preventDefault();
+        }
+    });
+</script>
+
 <!-- Contact End -->
 
     <!-- Agrega tus scripts JavaScript si es necesario -->

@@ -102,7 +102,7 @@
                 <div class="text-center py-4">
                     <a class="h6 text-decoration-none text-truncate" href="">Tomates</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>3000$</h5><h6 class="text-muted ml-3"><del></del></h6>
+                        <h5>$3000</h5><h6 class="text-muted ml-3"><del></del></h6>
                     </div>
                     <a class="btn btn-primary mt-3" href="">añadir a carrito</a>
                 </div>
@@ -119,7 +119,7 @@
                 <div class="text-center py-4">
                     <a class="h6 text-decoration-none text-truncate" href="">Lechuga</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>4000$</h5><h6 class="text-muted ml-3"><del></del></h6>
+                        <h5>$4000</h5><h6 class="text-muted ml-3"><del></del></h6>
                     </div>
                     <a class="btn btn-primary mt-3" href="">añadir a carrito</a>
                 </div>
@@ -137,7 +137,7 @@
                 <div class="text-center py-4">
                     <a class="h6 text-decoration-none text-truncate" href="">Lulos</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>2000$</h5><h6 class="text-muted ml-3"><del></del></h6>
+                        <h5>$2000</h5><h6 class="text-muted ml-3"><del></del></h6>
                     </div>
                     <a class="btn btn-primary mt-3" href="">añadir a carrito</a>
                 </div>
@@ -155,7 +155,7 @@
         <div class="text-center py-4">
             <a class="h6 text-decoration-none text-truncate" href="">Lulos</a>
             <div class="d-flex align-items-center justify-content-center mt-2">
-                <h5>2000$</h5><h6 class="text-muted ml-3"><del></del></h6>
+                <h5>$2000</h5><h6 class="text-muted ml-3"><del></del></h6>
             </div>
             <a class="btn btn-primary mt-3" href="">añadir a carrito</a>
         </div>

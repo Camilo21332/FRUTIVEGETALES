@@ -42,10 +42,8 @@
         </div>
         <div class="col"></div>
 
-        <!-- Botón de inicio de sesión -->
-        <div class="col-auto">
-            <a class="btn btn-iniciar-sesion" href="{{ route('login') }}">Iniciar Sesión</a>
-        </div>
+       
+        
     </div>
 </div>
 
@@ -123,6 +121,21 @@
     
         <input type="submit" value="Enviar PQRS">
     </form>
+
+    <script>
+        function validateForm() {
+            var tipo = document.getElementById("tipo").value;
+            var mensaje = document.getElementById("mensaje").value;
+    
+            if (tipo === "" || mensaje === "") {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+    
+            return true;
+        }
+    </script>
+
 </div>
 </div>
 </div>

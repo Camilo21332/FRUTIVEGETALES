@@ -49,8 +49,8 @@ class usersController extends Controller
         $users->telefono = $request->telefono;
         $users->email = $request->email;
         $users->password = bcrypt($request->password); // Encripta la contraseña
-        $users->abastecimiento_id = $request->abastecimiento_id;
-        $users->rol_id = $request->rol_id;
+       // $users->abastecimiento_id = $request->abastecimiento_id;
+        //$users->rol_id = $request->rol_id;
         $users->save();
         return redirect()->route('login', $users);
     }
@@ -96,8 +96,8 @@ class usersController extends Controller
         $user->telefono=$request->telefono;
         $user->email=$request->email;
         $user->password =$request->password;
-        $user->abastecimiento_id=$request->abastecimiento_id;
-        $user->rol_id=$request->rol_id;
+       // $user->abastecimiento_id=$request->abastecimiento_id;
+        //$user->rol_id=$request->rol_id;
         $user->save();
     
         return redirect()->route('users.index')->with('success', 'Registro actualizado correctamente');

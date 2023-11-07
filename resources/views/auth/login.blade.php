@@ -9,6 +9,8 @@
      <link href="{{ asset('css/inicio3.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio4.css') }}" rel="stylesheet">
     <!-- Agrega tus enlaces a hojas de estilo (CSS) aquí si es necesario -->
+
+    
 </head>
    <nav>
         <div class="container-tres">
@@ -51,16 +53,19 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group">
+                          <!--  <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="form-group">
+                            <a href="" class="btn btn-link">olvidaste tu Contraseña</a>
+                            <br>
+                            <br>
+                           <div class="form-group">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('iniciar sesion') }}
                                 </button>

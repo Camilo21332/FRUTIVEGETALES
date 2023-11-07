@@ -15,17 +15,17 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-           $table->unsignedBigInteger('rol_id');
-            $table->unsignedBigInteger('abastecimiento_id');
+          // $table->unsignedBigInteger('rol_id');
+           // $table->unsignedBigInteger('abastecimiento_id');
             $table->string('nombres');
             $table->string('apellidos');
             $table->integer('edad');
-            $table->integer('telefono');
+            $table->string('telefono', 15);
             $table->string('email');
             $table->string('password');
             $table->timestamps();
-            $table->foreign('abastecimiento_id')->references('id')->on('abastecimientos')->onDelete('cascade');
-            $table->foreign('rol_id')->references('id')->on('rols')->onDelete('cascade');
+           // $table->foreign('abastecimiento_id')->references('id')->on('abastecimientos')->onDelete('cascade');
+           // $table->foreign('rol_id')->references('id')->on('rols')->onDelete('cascade');
         });
     }
 

@@ -42,9 +42,7 @@
             <div class="col"></div>
 
             <!-- Botón de inicio de sesión -->
-            <div class="col-auto">
-                <a class="btn btn-iniciar-sesion" href="{{ route('login') }}">Iniciar Sesión</a>
-            </div>
+            
         </div>
     </div>
     
@@ -94,28 +92,53 @@
 </head>
 <body>
     <div class="users-form">
-        <h1>crear producto</h1>
-    <form action="{{route('productos.store')}}"method="post" enctype="multipart/form-data">@csrf 
-      
-        <input type="text" name="nombres" placeholder="nombres">
- 
-        <input type="text" name="tiempo_reclamo" placeholder="tiempo reclamo">
-
-        <input type="file" name="imagen">
-   
-        <input type="number" name="precio" placeholder="precio">
+        <h1>Crear Producto</h1>
+        <form action="{{ route('productos.store') }}" method="post" enctype="multipart/form-data" id="product-form">
+            @csrf
+    
+            <input type="text" name="nombres" placeholder="Nombres" required>
+    
+            <input type="text" name="tiempo_reclamo" placeholder="Tiempo de Reclamo" required>
+    
+            <input type="file" name="imagen" required>
+    
+            <input type="number" name="precio" placeholder="Precio" required>
+    
+            <input type="text" name="descripcion" placeholder="Descripción" required>
+    
+            <select name="user_id" required>
+                @foreach ($users as $user)
+                    <option value="{{ $user->id }}">{{ $user->id }} {{ $user->nombres }}</option>
+                @endforeach
+            </select>
+    
+            <input type="submit" value="Enviar formulario" id="submit-button">
+        </form>
+    </div>
+    <script>
+        document.getElementById('product-form').onsubmit = function(event) {
+            var nombres = document.querySelector('input[name="nombres"]').value;
+            var tiempoReclamo = document.querySelector('input[name="tiempo_reclamo"]').value;
+            var precio = document.querySelector('input[name="precio"]').value;
+    
+            // Validaciones personalizadas
+            if (nombres.trim() === '') {
+                alert('Por favor, ingrese un nombre válido.');
+                event.preventDefault();
+            }
+    
+            if (tiempoReclamo.trim() === '') {
+                alert('Por favor, ingrese un tiempo de reclamo válido.');
+                event.preventDefault();
+            }
+    
+            if (isNaN(precio) || precio <= 0) {
+                alert('El precio debe ser un número válido y mayor que cero.');
+                event.preventDefault();
+            }
+        };
+    </script>
         
-  
-        <input type="text" name="descripcion" placeholder="descrpcion">
-
-        <select name="user_id">
-            @foreach ($users as $user)
-                <option value="{{ $user->id }}"> {{ $user->id }} {{ $user->nombres }}</option>
-            @endforeach
-        </select>
-        <input type="submit" value="enviar formulario">
-</div>
-</form> 
 
 </body>
 </html>

@@ -101,7 +101,7 @@
                 <div class="text-center py-4">
                     <a class="h6 text-decoration-none text-truncate" href="{{ route('productos.show', $producto->id) }}">{{ $producto->nombres }}</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>{{ $producto->precio }}</h5><h6 class="text-muted ml-3"><del></del></h6>
+                        <h5>${{ $producto->precio }}</h5><h6 class="text-muted ml-3"><del></del></h6>
                     </div>
                     <a class="btn btn-primary mt-3" href="">añadir a carrito </a>
                 </div>
@@ -139,14 +139,14 @@
    <!-- Línea divisoria -->
    <hr class="footer-divider">
 
-   <!-- Enlaces de políticas y logo con versión en la misma línea -->
-   <div class="footer-links">
-       <a href="#">Política de Privacidad</a>
-       <a href="#">Términos y Condiciones</a>
-       <a href="#">Protección  Datos Personales</a>
-       <img src="{{ asset('img/logoofi.png') }}" alt="Logo Versión" class="footer-logo">
-       <span class="version">2023 frutivegetal</span>
-    </div>
+     <!-- Enlaces de políticas y logo con versión en la misma línea -->
+     <div class="footer-links">
+        <a href="{{ route('politicas') }}">Política de Privacidad</a>
+        <a href="{{ route('terminos') }}">Términos y Condiciones</a>
+        <a href="{{ route('datospersonales') }}">Protección  Datos Personales</a>
+        <img src="{{ asset('img/logoofi.png') }}" alt="Logo Versión" class="footer-logo">
+        <span class="version">2023 frutivegetal</span>
+     </div>
 
 </footer>
 

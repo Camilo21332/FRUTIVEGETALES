@@ -39,10 +39,14 @@
             </div>
             <div class="col"></div>
 
-            <!-- Botón de inicio de sesión -->
+            @if (Auth::check())
+            <!-- El usuario ha iniciado sesión, no mostrar el botón -->
+        @else
+            <!-- El usuario no ha iniciado sesión, mostrar el botón -->
             <div class="col-auto">
                 <a class="btn btn-iniciar-sesion" href="{{ route('login') }}">Iniciar Sesión</a>
             </div>
+        @endif
         </div>
     </div>
     
@@ -85,7 +89,6 @@
                         <a class="nav-link" href="{{route('pqrs.create')}}">PQRS</a>
                     </li>
 
-
                     <li class="nav-item dropdown"> 
                         <a class="nav-link dropdown-toggle" href="#" id="categoriasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Administrar 
@@ -100,14 +103,32 @@
                             <a class="dropdown-item" href="{{ route('rols.index') }}">rols</a>
                             <a class="dropdown-item" href="{{ route('pqrs.index') }}">PQRS</a>
                             <a class="dropdown-item" href="{{ route('abastecimientos.index') }}">abastecimientos</a>
-                        
-                        </div>
-                       
-                    </li>
+                          <!-- Icono de perfil -->
+         @if (Auth::check())
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle profile-icon" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{{ asset('img/iconoperfil.png') }}" alt="Icono de perfil" style="width: 32px; height: auto;">
+                {{ Auth::user()->nombres }}
+            </a>
+                   
+            <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="">Actualizar Perfil</a>
+                <a class="dropdown-item" href="{{route('productos.create')}}">Vender Producto</a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                 Cerrar Sesión
+             </a>
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+             </form>
                 </ul>
+
+                @endif
             </div>
         </div>
     </nav>
+
+
    <!-- Carrusel -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-interval="2000">
     <ol class="carousel-indicators">
@@ -156,7 +177,7 @@
                 <div class="text-center py-4">
                     <a class="h6 text-decoration-none text-truncate" href="{{ route('productos.show', $producto->id) }}">{{ $producto->nombres }}</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h5>{{ $producto->precio }}</h5><h6 class="text-muted ml-3"><del></del></h6>
+                        <h5>${{ $producto->precio }}</h5><h6 class="text-muted ml-3"><del></del></h6>
                     </div>
                     <a class="btn btn-primary mt-3" href="">añadir a carrito </a>
                 </div>
@@ -172,7 +193,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="wave">
         <path fill="#35ea35" fill-opacity="1" d="M0,224L26.7,218.7C53.3,213,107,203,160,213.3C213.3,224,267,256,320,261.3C373.3,267,427,245,480,218.7C533.3,192,587,160,640,170.7C693.3,181,747,235,800,245.3C853.3,256,907,224,960,192C1013.3,160,1067,128,1120,128C1173.3,128,1227,160,1280,170.7C1333.3,181,1387,171,1413,165.3L1440,160L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
         <image href="{{ asset('img/logito.jpg') }}" x="20" y="80" width="300" height="90" />
-        <text x="300" y="120" font-size="30" font-weight="bold" fill="#000"> Descárgate nuestra app</text>
+        <text x="300" y="120" font-size="30" font-weight="bold" fill="#000"> Descárga nuestra app</text>
         <a href="#" x="500" y="120" style="text-decoration: none;">
             <rect x="750" y="100" rx="10" ry="10" width="170" height="50" style="fill:#fcf8f8ea;" />
             <text x="830" y="130" font-size="20" fill="#060606" text-anchor="middle">Descargar ahora</text>

@@ -14,7 +14,7 @@
      <link href="{{ asset('css/registro1.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio.css') }}" rel="stylesheet">
      <link href="{{ asset('css/inicio3.css') }}" rel="stylesheet">
-     <link href="{{ asset('css/inicio4.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/inicio6.css') }}" rel="stylesheet">
 </head>
 <nav>
     <div class="container-dos">
@@ -24,18 +24,60 @@
     </div>
 </nav>
 <br>
+
+<script>
+function validateForm() {
+    var nombres = document.forms["myForm"]["nombres"].value;
+    var apellidos = document.forms["myForm"]["apellidos"].value;
+    var edad = document.forms["myForm"]["edad"].value;
+    var telefono = document.forms["myForm"]["telefono"].value;
+    var email = document.forms["myForm"]["email"].value;
+    var password = document.forms["myForm"]["password"].value;
+
+    if (nombres === "") {
+        document.getElementById("nombresError").innerText = "Por favor, ingresa tu nombre.";
+        return false;
+    } else {
+        document.getElementById("nombresError").innerText = ""; // Limpia el mensaje de error
+    }
+
+    if (apellidos === "") {
+        document.getElementById("apellidosError").innerText = "Por favor, ingresa tus apellidos.";
+        return false;
+    } else {
+        document.getElementById("apellidosError").innerText = "";
+    }
+
+    // Repite lo anterior para otros campos
+
+    return true; // Envía el formulario si no hay errores
+}
+</script>
 <body>
     <h1>Registrarse</h1>
     <div class="users-form-uno">
-        <form action="{{ route('users.store') }}" method="post">
+        <form name="myForm" action="{{ route('users.store') }}" method="post" onsubmit="return validateForm();">
             @csrf
             <input type="text" name="nombres" placeholder="Nombres">
+            <div id="nombresError" class="error"></div>
+            
             <input type="text" name="apellidos" placeholder="Apellidos">
+            <div id="apellidosError" class="error"></div>
+            
             <input type="text" name="edad" placeholder="Edad">
+            <div id="edadError" class="error"></div>
+            
             <input type="text" name="telefono" placeholder="Teléfono">
+            <div id="telefonoError" class="error"></div>
+            
             <input type="text" name="email" placeholder="Email">
+            <div id="emailError" class="error"></div>
+            
             <input type="password" name="password" placeholder="Contraseña">
-            <select name="rol_id">
+            <div id="passwordError" class="error"></div>
+            
+            <input type="submit" value="Enviar formulario">
+          <!--  <select name="rol_id">
                 @foreach($rols as $rol)
                     <option value="{{ $rol->id }}">{{ $rol->nombre }}</option>
                 @endforeach
@@ -44,8 +86,8 @@
                 @foreach($abastecimientos as $abastecimiento)
                     <option value="{{ $abastecimiento->id }}">{{ $abastecimiento->nombre }}</option>
                 @endforeach
-            </select>
-            <input type="submit" value="Enviar formulario">
+            </select>-->
+     
         </form>
     </div>
 <br>
@@ -87,6 +129,8 @@
         </div>
     </footer>
 
+ 
+ <script src="{{ asset('js/validar.js') }}"></script>
 
 </body>
 </html>

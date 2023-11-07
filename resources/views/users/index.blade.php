@@ -19,8 +19,8 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Rol</th>
-                <th>Abastecimiento ID</th>
+               <!-- <th>Rol</th>
+                <th>Abastecimiento ID</th> -->
                 <th>Nombres</th>
                 <th>Apellidos</th>
                 <th>Edad</th>
@@ -34,8 +34,8 @@
             @foreach ($user as $user)
             <tr>
                 <td>{{$user->id}}</td>
-                <td>{{$user->rol_id}}</td>
-                <td>{{$user->abastecimiento_id}}</td>
+              <!--  <td>{{$user->rol_id}}</td>
+                <td>{{$user->abastecimiento_id}}</td> -->
                 <td>{{$user->nombres}}</td>
                 <td>{{$user->apellidos}}</td>
                 <td>{{$user->edad}}</td>
